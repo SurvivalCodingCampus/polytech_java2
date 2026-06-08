@@ -5,7 +5,9 @@ public class MyFirstClass {
     {
         final int i = 0;
 
+        String name = "홍길동";
+
         // sout
-        System.out.println("헬로!!!!");
+        System.out.println("헬로!!!!" + name);
     }
 }
