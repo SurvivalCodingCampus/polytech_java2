@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ClericTest {
 
@@ -38,6 +39,13 @@ class ClericTest {
         tmp = test2.pray(0);
 
         // then 검증
+        // 피드백 이후 assert 관련 함수들을 찾아서 랜덤값 작동 확인 방법 개선
+        // pray(int second)는 second + (0 ~ 2) 이기 때문에, 회복량은 0 ~ 2 가 되어야 함.
+        assertTrue(tmp >= 0 && tmp <= 2);
+        System.out.println("회복량 : " + tmp);
+
+
+        /*
         // 검증시 랜덤으로 인해 assertEquals 사용을 못함
         // 5회 반복하여 실제로 랜덤으로 작동하는지 확인
         System.out.println("회복량 : " + tmp);
@@ -49,7 +57,7 @@ class ClericTest {
             System.out.println("회복량 : " + tmp);
         }
 
-
+        */
         // 초기값 9로 maxMP를 넘기는 상황을 연축
         test2.mp = 9;
 

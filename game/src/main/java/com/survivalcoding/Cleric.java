@@ -5,11 +5,10 @@ import java.util.Random;
 public class Cleric {
     String name;
     final int maxHP = 50;
-    int hp = maxHP;
+    int hp;
     final int maxMP = 10;
     int mp = maxMP;
-
-
+    
     void selfAid() {
         mp -= 5;
         hp = maxHP;
