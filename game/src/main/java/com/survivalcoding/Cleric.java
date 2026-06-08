@@ -1,8 +1,8 @@
 package com.survivalcoding;
 
 public class Cleric {
-    static final int MAX_HP = 50;
-    static final int MAX_MP = 10;
+    final int MAX_HP = 50;
+    final int MAX_MP = 10;
 
     String name;
     int HP = MAX_HP;
@@ -14,9 +14,15 @@ public class Cleric {
     }
 
     int pray(int sec) {
-        int recovery = sec + new java.util.Random().nextInt(3);
+        int random = (int) (Math.random() * 3);
+        int recovery = sec + random;
         int beforeMP = MP;
-        MP = Math.min(MAX_MP, MP + recovery);
+
+        MP += recovery;
+        if (MP > MAX_MP) {
+            MP = MAX_MP;
+        }
+
         return MP - beforeMP;
     }
 }
