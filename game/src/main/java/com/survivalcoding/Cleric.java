@@ -9,7 +9,21 @@ public class Cleric {
     int MP = 10;
 
     void selfAid() {
-        Mp -= 5;
+        MP -= 5;
         HP = MaxHp;
+    }
+
+    int pray(int time) {
+        int random = (int) (Math.random() * 2);
+        int increment = time + random;
+        MP += increment;
+
+        if (MP > MaxMP) {
+            increment = MaxMP - MP;
+            MP = MaxMP;
+            return increment;
+        }
+
+        return increment;
     }
 }
