@@ -24,7 +24,7 @@ public class Cleric {
 
         this.mp += realRecovery;
 
-        System.out.println(this.name + "는 mp를 " + randompoint + "만큼 회복하였다.");
+        System.out.println(this.name + "는 mp를 " + realRecovery + "만큼 회복하였다.");
 
         return realRecovery;
     }
