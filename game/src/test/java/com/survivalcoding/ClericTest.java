@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ClericTest {
 
     @Test
-    @DisplayName("selfAid를 하면 hp가 MAX_HP로 회복되어야 한다")
+    @DisplayName("SelfAid should restore hp to MAX_HP")
     void selfAid_hp() {
         // given (준비)
-        final Cleric cleric = new Cleric();
+        final Cleric cleric = new Cleric("Anduin");
         cleric.hp = 20;
 
         // when (실행)
@@ -23,10 +23,10 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("selfAid를 하면 mp가 5 소비되어야 한다")
+    @DisplayName("mp reduce 5 after SelfAid")
     void selfAid_mp() {
         // given
-        final Cleric cleric = new Cleric();
+        final Cleric cleric = new Cleric("Anduin");
 
         // when
         cleric.selfAid();
@@ -36,10 +36,10 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("pray를 하면 mp가 회복되어야 한다")
+    @DisplayName("Pray should restore mp")
     void pray_mp() {
         // given
-        final Cleric cleric = new Cleric();
+        final Cleric cleric = new Cleric("Anduin");
         cleric.mp = 0;
 
         // when
@@ -50,10 +50,10 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("pray를 해도 mp가 MAX_MP를 초과할 수 없다")
+    @DisplayName("mp cannot overflow MAX_MP after Pray")
     void pray_max_mp() {
         // given
-        final Cleric cleric = new Cleric(); // mp = 10 (이미 최대)
+        final Cleric cleric = new Cleric("Anduin"); // mp = 10 (이미 최대)
 
         // when
         int recovered = cleric.pray(3);
@@ -62,4 +62,38 @@ class ClericTest {
         assertEquals(0, recovered);
         assertEquals(10, cleric.mp);
     }
+
+    @Test
+    @DisplayName("Cleric can be instantiated with name, hp, and mp")
+    void constructor_all() {
+
+        final Cleric cleric = new Cleric("Anduin", 40, 5);
+
+        assertEquals("Anduin", cleric.name);
+        assertEquals(40, cleric.hp);
+        assertEquals(5, cleric.mp);
+    }
+
+    @Test
+    @DisplayName("Cleric can be instantiated with name and hp, mp defaults to MAX_MP")
+    void constructor_name_hp() {
+
+        final Cleric cleric = new Cleric("Anduin", 35);
+
+        assertEquals("Anduin", cleric.name);
+        assertEquals(35, cleric.hp);
+        assertEquals(Cleric.MAX_MP, cleric.mp);
+    }
+
+    @Test
+    @DisplayName("Cleric can be instantiated with name only, hp and mp default to max values")
+    void constructor_name_only() {
+
+        final Cleric cleric = new Cleric("Anduin");
+
+        assertEquals("Anduin", cleric.name);
+        assertEquals(Cleric.MAX_HP, cleric.hp);
+        assertEquals(Cleric.MAX_MP, cleric.mp);
+    }
+
 }
