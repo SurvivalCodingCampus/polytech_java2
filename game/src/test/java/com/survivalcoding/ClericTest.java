@@ -2,7 +2,7 @@ package com.survivalcoding;
 
 import org.junit.jupiter.api.Test;
 
-class MainTest {
+class ClericTest {
 
     @Test
     void main() {
