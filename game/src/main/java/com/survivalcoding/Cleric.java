@@ -3,11 +3,29 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Cleric {
-    int hp = 50;
-    int mp = 10;
-    final int maxHp = 50;
-    final int maxMp = 10;
+    int hp;
+    int mp;
+    static final int maxHp = 50;
+    static final int maxMp = 10;
     String name;
+
+    Cleric(String name, int hp, int mp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name, int hp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = Cleric.maxMp;
+    }
+
+    Cleric(String name) {
+        this.name = name;
+        this.hp = Cleric.maxHp;
+        this.mp = Cleric.maxMp;
+    }
 
     void selfAid() {
         if (mp < 5) {
@@ -21,7 +39,7 @@ public class Cleric {
     int pray(int sec) {
         Random random = new Random();
         int recovery = sec + random.nextInt(3);
-        int HealMP = Math.min(this.maxMp - this.mp, recovery);
+        int HealMP = Math.min(maxMp - this.mp, recovery);
         this.mp += HealMP;
         return HealMP;
     }
