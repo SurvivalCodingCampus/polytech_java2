@@ -16,10 +16,14 @@ class ClericTest {
 
 
         //when
+        System.out.println(cleric.name);
+        System.out.println(cleric.hp);
+        System.out.println(cleric.mp);
+        System.out.println("===");
         System.out.println(cleric2.name);
         System.out.println(cleric2.hp);
         System.out.println(cleric2.mp);
-
+        System.out.println("===");
         System.out.println(cleric3.name);
         System.out.println(cleric3.hp);
         System.out.println(cleric3.mp);
