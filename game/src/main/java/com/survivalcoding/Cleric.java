@@ -42,7 +42,7 @@ public class Cleric {
     int pray(int sec) {
         Random random = new Random();
         int recovery = sec + random.nextInt(3);
-        int HealMP = Math.min(this.maxMp - this.mp, recovery);
+        int HealMP = Math.min(Cleric.maxMp - this.mp, recovery);
         this.mp += HealMP;
         return HealMP;
     }
