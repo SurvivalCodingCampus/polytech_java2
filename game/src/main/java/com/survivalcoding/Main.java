@@ -7,7 +7,7 @@ public class Main {
 
         int a = 10;
         long l = 10L; //literal 리터널
-
+/*
         Cleric cleric = new Cleric();
 
         cleric.name = "cleric";
@@ -17,5 +17,7 @@ public class Main {
         cleric.MP += cleric.pray(1);
         System.out.println(cleric.MP);
 
+
+ */
     }
 }
