@@ -10,8 +10,8 @@ public class Cleric {
     final Random rand = new Random();
 
     String name;
-    int hp = maxHP;
-    int mp = maxMP;
+    int hp;
+    int mp;
 
     Cleric(String name, int hp, int mp) {
         this.name = name;
@@ -25,6 +25,10 @@ public class Cleric {
 
     Cleric(String name) {
         this(name, maxHP, maxMP);
+    }
+
+    Cleric() {
+        throw new IllegalArgumentException("스탯을 입력하지 않은 클레릭은 생성될 수 없습니다.");
     }
 
     void selfAid() {

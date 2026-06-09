@@ -6,6 +6,39 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClericTest {
+    @Test
+    @DisplayName("여러 객체 생성 테스트")
+    void clericCreation() {
+        // given
+        final String testName = "이름";
+        final int testHP = 30;
+        final int testMP = 7;
+
+        // when
+        Cleric set1 = new Cleric(testName, testHP, testMP);
+        Cleric set2 = new Cleric(testName, testHP);
+        Cleric set3 = new Cleric(testName);
+
+        // then 검증
+        assertStats("set1 스탯 확인", set1, testName, testHP, testMP);
+        assertStats("set2 스탯 확인", set2, testName, testHP, Cleric.maxMP);
+        assertStats("set3 스탯 확인", set3, testName, Cleric.maxHP, Cleric.maxMP);
+
+        // 생성 안되는지 검증
+        assertThrows(IllegalArgumentException.class, () -> {
+            Cleric set4 = new Cleric();
+        });
+
+    }
+
+    // 스탯 확인을 위한 임시 함수
+    private void assertStats(String headDescription, Cleric cleric, String exceptName, int exceptHP, int exceptMP) {
+        assertAll(headDescription,
+                () -> assertEquals(exceptName, cleric.name, "이름 틀림"),
+                () -> assertEquals(exceptHP, cleric.hp, "HP 틀림"),
+                () -> assertEquals(exceptMP, cleric.mp, "mp 불일치")
+        );
+    }
 
     @Test
     @DisplayName("selfAid 테스트, MP 5 소모 후 HP 회복")
@@ -76,20 +109,5 @@ class ClericTest {
         // then 검증
         // maxMP의 값이 10이기에 로직상 tmp에는 (최대MP - 현재MP)의 값이 담겨있어야함.
         assertEquals(correctAnswer, tmp, "최대 마나 테스트실패");
-
-        /*
-        // 피드백 수정 전
-        // 검증시 랜덤으로 인해 assertEquals 사용을 못함
-        // 5회 반복하여 실제로 랜덤으로 작동하는지 확인
-        System.out.println("회복량 : " + tmp);
-
-        // 아래는 검증 5회 반복임
-        for (int i = 0; i < 5; i++) {
-            test2.mp = 5;
-            tmp = test2.pray(0);
-            System.out.println("회복량 : " + tmp);
-        }
-
-        */
     }
 }
