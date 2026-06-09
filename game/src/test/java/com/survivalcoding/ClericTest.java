@@ -25,7 +25,7 @@ class ClericTest {
 
         // then 검증
         assertEquals(initSelfAidMP - test1.selfAidMPCost, test1.mp);
-        assertEquals(test1.maxHP, test1.hp);
+        assertEquals(Cleric.maxHP, test1.hp);
 
         // mp가 부족할 경우 테스트
         // given 준비
@@ -36,7 +36,7 @@ class ClericTest {
         test1.selfAid();
 
         // then 검증
-        assertNotEquals(test1.maxHP, test1.hp);
+        assertNotEquals(Cleric.maxHP, test1.hp);
         assertEquals(mpEdgeCase, test1.mp);
     }
 

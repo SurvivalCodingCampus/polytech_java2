@@ -20,12 +20,11 @@ public class Cleric {
     }
 
     Cleric(String name, int hp) {
-        this.name = name;
-        this.hp = hp;
+        this(name, hp, maxMP);
     }
 
     Cleric(String name) {
-        this.name = name;
+        this(name, maxHP, maxMP);
     }
 
     void selfAid() {
