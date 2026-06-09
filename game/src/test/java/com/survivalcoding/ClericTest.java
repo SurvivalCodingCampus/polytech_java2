@@ -12,7 +12,7 @@ class ClericTest {
 
     @BeforeEach
     void setUp() {
-        cleric = new Cleric();
+        cleric = new Cleric("아서스");
     }
 
     @Test
@@ -52,5 +52,31 @@ class ClericTest {
         // Then: MP는 10을 넘지 않고, 반환값은 실제 회복된 2여야 한다
         assertEquals(10, cleric.MP);
         assertEquals(2, recovered);
+    }
+
+    @Test
+    void constructor_Test() {
+        // Given + When : 이름 아서스 , HP 40 , MP 5
+        Cleric c1 = new Cleric("아서스", 40, 5);
+
+        // Then : 아서스 , 40 , 5 검증
+        assertEquals("아서스", c1.name);
+        assertEquals(40, c1.HP);
+        assertEquals(5, c1.MP);
+
+        // Given + When : 이름 아서스 , HP 35 , MaxMP 10
+        Cleric c2 = new Cleric("아서스", 35);
+
+        // Then : 아서스 , 35 , 10 검증
+        assertEquals("아서스", c2.name);
+        assertEquals(35, c2.HP);
+        assertEquals(10, c2.MP);
+
+        // Given + When : 이름 아서스 , MaxHP 50 , MaxMP 10 ( 이미 위에서 @BeforeEach로 생성된 인스턴스 활용 )
+
+        // Then : 아서스 , 50 , 10 검증
+        assertEquals("아서스", cleric.name);
+        assertEquals(50, cleric.HP);
+        assertEquals(10, cleric.MP);
     }
 }
