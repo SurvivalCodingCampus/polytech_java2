@@ -1,20 +1,3 @@
-# 2026-06-08 함수
-
-## 오늘 배운 내용
-
-- 이번 과제를 통해 새롭게 알게 된 점이나 아쉬운 점을 기록합니다.
-- test에 대해서 아직도 헷갈린다. 어떻게 접근을 해가야할지 모르겠다.
-
-## 기억할 것
-
-- 매직넘버가 많으면 버그가 생길 수 있다.
-- 인스턴스 : heap 영역 안에 확보된 메모리
-- 생성자 : 인스턴스를 생성하는 방법 제공 - 책임자를 나누기.
-- 모든 클래스에는 생성자가 반드시 1개 이상 필요
-
-## 실습 코드
-
-```java
 package com.survivalcoding;
 
 import org.junit.jupiter.api.DisplayName;
@@ -76,55 +59,34 @@ class ClericTest {
         assertEquals(hp, cleric1.hp);
         assertEquals(mp, cleric1.mp);
     }
-}
-
-```
-
-package com.survivalcoding;
-
-public class Cleric {
-final int MAX_HP = 50;
-final int MAX_MP = 10;
-final int selfAidMpCost = 5; // 매직넘버를 없애기 위해 상수 설정
-String name;
-int hp = MAX_HP;
-int mp = MAX_MP;
-
+   /* @Test
     void selfAid() {
-        if (mp < selfAidMpCost) {
-            System.out.println("MP가 부족합니다.");
-            return;
-        }
+        // given
+        Cleric cleric6 = new Cleric(); //인스턴스 만들기
+        cleric.hp = 10;
+        cleric.mp = 10;
 
-        mp -= selfAidMpCost;
-        hp = MAX_HP;
+        // when
+        cleric.selfAid();
 
-        System.out.println("셀프 에이드");
-    }
+        // then
+        assertEquals(50, cleric.hp);
+        assertEquals(5, cleric.mp);
 
-    int pray(int sec) {
-        int beforeMp = this.mp;
-
-        this.mp += sec + new java.util.Random().nextInt(3);
-
-        if (this.mp > this.MAX_MP) {
-            this.mp = this.MAX_MP;
-        }
-
-        return this.mp - beforeMp;
 
     }
 
+    @Test
+    void pray() {
+        //given
+        Cleric cleric = new Cleric();
+        cleric.mp = 5;
+
+        //when
+        int result = cleric.pray(3);
+
+        // then
+        assertTrue(result >= 3 && result <= 5);
+        assertTrue(cleric.mp >= 8 && cleric.mp <= 10);
+    }*/
 }
-
-## 어려웠던 점
-
-- test가 너무 어려웠다.
-
-## 해결 방법
-
-- ai질문
-
-## 내일 더 공부할 것
-
-- 
