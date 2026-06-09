@@ -9,20 +9,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ClericTest {
 
     @Test
-    @DisplayName("정상적으로 회복되었습니다.")
+    @DisplayName("코드를 재확인 하셔야 합니다.")
     void main() {
         // given(준비)
         int MP, MaxHP, MaxMP;
 
         // when(실행)
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("Cleric");
 
         // then(검증)
         cleric.name = "Cleric";
         cleric.hp = 50;
         cleric.mp = 10;
-        MaxHP = cleric.maxHp;
-        MaxMP = cleric.maxMp;
+        MaxHP = Cleric.maxHp;
+        MaxMP = Cleric.maxMp;
         System.out.println(cleric.name + " Create");
         assertEquals("Cleric", cleric.name, "Cleric 캐릭터를 생성하지 못했습니다.");
 

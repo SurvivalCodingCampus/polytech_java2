@@ -3,11 +3,32 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Cleric {
-    int hp = 50;
-    int mp = 10;
-    final int maxHp = 50;
-    final int maxMp = 10;
+    int hp;
+    int mp;
+    static final int maxHp = 50;
+    static final int maxMp = 10;
     String name;
+
+    Cleric(String name, int Hp, int Mp) {
+        this.name = name;
+        this.hp = Hp;
+        this.mp = Mp;
+    }
+
+    Cleric(String name, int Hp) {
+        this.name = name;
+        this.hp = Hp;
+        this.mp = Cleric.maxMp;
+    }
+
+    Cleric(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("이름 없는 성직자는 생성 할 수 없습니다.");
+        }
+        this.name = name;
+        this.hp = Cleric.maxHp;
+        this.mp = Cleric.maxMp;
+    }
 
     void selfAid() {
         if (mp < 5) {

@@ -5,15 +5,15 @@ package com.survivalcoding;
 public class Main {
     public static void main(String[] args) {
         // 인스턴스 생성
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("Cleric");
 
         int CHP, CMP, CMaxHP, CMaxMP;
 
         cleric.name = "Cleric";
         CHP = cleric.hp;
         CMP = cleric.mp;
-        CMaxHP = cleric.maxHp;
-        CMaxMP = cleric.maxMp;
+        CMaxHP = Cleric.maxHp;
+        CMaxMP = Cleric.maxMp;
         System.out.println(cleric.name + " Create");
 
         cleric.selfAid();
