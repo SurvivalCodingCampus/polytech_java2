@@ -25,7 +25,7 @@ class ClericTest2 {
         Cleric cleric3 = new Cleric("아서스");
         // 객체 이름, 최대 HP, 최대 MP 생성되었는지 눈으로 확인 시스템
         System.out.println(cleric3.name + " " + cleric3.hp + " " + cleric3.mp);
-        assertEquals("아서스", cleric.name, "캐릭터 이름이 다릅니다.");
+        assertEquals("아서스", cleric3.name, "캐릭터 이름이 다릅니다.");
         assertEquals(50, cleric3.hp, "HP가 50이어야 합니다.");
         assertEquals(10, cleric3.mp, "MP가 10이어야 합니다.");
 

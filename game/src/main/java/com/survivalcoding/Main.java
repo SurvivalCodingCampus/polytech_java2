@@ -9,7 +9,7 @@ public class Main {
 
         int CHP, CMP, CMaxHP, CMaxMP;
 
-        cleric.name = "Cleric";
+        
         CHP = cleric.hp;
         CMP = cleric.mp;
         CMaxHP = Cleric.maxHp;

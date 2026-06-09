@@ -18,7 +18,7 @@ class ClericTest {
         Cleric cleric = new Cleric("Cleric");
 
         // then(검증)
-        cleric.name = "Cleric";
+        
         cleric.hp = 50;
         cleric.mp = 10;
         MaxHP = Cleric.maxHp;

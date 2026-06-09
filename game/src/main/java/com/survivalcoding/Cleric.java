@@ -9,15 +9,15 @@ public class Cleric {
     static final int maxMp = 10;
     String name;
 
-    Cleric(String name, int Hp, int Mp) {
+    Cleric(String name, int hp, int mp) {
         this.name = name;
-        this.hp = Hp;
-        this.mp = Mp;
+        this.hp = hp;
+        this.mp = mp;
     }
 
-    Cleric(String name, int Hp) {
+    Cleric(String name, int hp) {
         this.name = name;
-        this.hp = Hp;
+        this.hp = hp;
         this.mp = Cleric.maxMp;
     }
 
@@ -39,7 +39,7 @@ public class Cleric {
     int pray(int sec) {
         Random random = new Random();
         int recovery = sec + random.nextInt(3);
-        int HealMP = Math.min(Cleric.maxMp - this.mp, recovery);
+        int HealMP = Math.min(maxMp - this.mp, recovery);
         this.mp += HealMP;
         return HealMP;
     }
