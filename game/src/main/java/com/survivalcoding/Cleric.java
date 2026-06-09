@@ -8,6 +8,25 @@ public class Cleric {
     int HP = MAX_HP;
     int MP = MAX_MP;
 
+    public Cleric(String name, int HP, int MP) {
+        this.name = name;
+        this.HP = HP;
+        this.MP = MP;
+    }
+
+    public Cleric(String name, int HP) {
+        this(name, HP, MAX_MP);
+    }
+
+    public Cleric(String name) {
+        this(name, MAX_HP, MAX_MP);
+    }
+
+    /* 이름을 지정하지 않았으므로 인스턴스화 할 수 없다.
+    public Cleric() {
+    }
+     */
+
     void selfAid() {
         if (HP < 5) {
             return;
