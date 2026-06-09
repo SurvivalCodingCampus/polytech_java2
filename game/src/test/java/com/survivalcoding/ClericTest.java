@@ -3,11 +3,9 @@ package com.survivalcoding;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ClericTest {
-
     @Test
     @DisplayName("Cleric 상태 정보")
     void status() {
@@ -16,9 +14,9 @@ class ClericTest {
         cleric.status();
 
         assertEquals(20, cleric.hp);
-        assertEquals(50, cleric.maxHp);
+        assertEquals(50, Cleric.MAX_HP);
         assertEquals(5, cleric.mp);
-        assertEquals(10, cleric.maxMp);
+        assertEquals(10, Cleric.MAX_MP);
     }
 
     @Test
@@ -48,5 +46,41 @@ class ClericTest {
         int resultMp = mpRecovery + beforeMp;
         assertEquals(resultMp, cleric.mp);
 
+    }
+
+    @Test
+    @DisplayName("이름, HP, MP 지정")
+    void Name_Hp_Mp() {
+        final Cleric cleric = new Cleric("아서스", 40, 5);
+
+        assertEquals("아서스", cleric.name);
+        assertEquals(40, cleric.hp);
+        assertEquals(5, cleric.mp);
+    }
+
+    @Test
+    @DisplayName("이름, HP 지정")
+    void Name_Hp() {
+        final Cleric cleric = new Cleric("아서스", 35);
+
+        assertEquals("아서스", cleric.name);
+        assertEquals(35, cleric.hp);
+        assertEquals(10, cleric.mp);
+    }
+
+    @Test
+    @DisplayName("이름만 지정")
+    void Name() {
+        Cleric cleric = new Cleric("아서스");
+        assertEquals("아서스", cleric.name);
+        assertEquals(50, cleric.hp);
+        assertEquals(10, cleric.mp);
+    }
+
+    @Test
+    @DisplayName("이름도 지정 안함")
+    void nullName() {
+        assertThrows(NoSuchMethodException.class,
+                Cleric.class::getDeclaredConstructor);
     }
 }

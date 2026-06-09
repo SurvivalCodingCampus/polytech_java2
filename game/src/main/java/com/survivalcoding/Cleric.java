@@ -1,12 +1,21 @@
 package com.survivalcoding;
 
 public class Cleric {
-    String name;
+    static final int MAX_HP = 50;
+    static final int MAX_MP = 10;
+    static final int SELF_AID_MP_COST = 5;
 
+    String name;
     int hp;
-    final int maxHp = 50;
     int mp;
-    final int maxMp = 10;
+
+    public Cleric(String name) {
+        this(name, MAX_HP, MAX_MP);
+    }
+
+    public Cleric(String name, int hp) {
+        this(name, hp, MAX_MP);
+    }
 
     public Cleric(String name, int hp, int mp) {
         this.name = name;
@@ -16,26 +25,25 @@ public class Cleric {
 
     void status() {
         System.out.println(name);
-        System.out.println(hp + "/" + maxHp);
-        System.out.println(mp + "/" + maxMp);
+        System.out.println(hp + "/" + MAX_HP);
+        System.out.println(mp + "/" + MAX_MP);
     }
 
     void selfAid() {
-        if (mp >= 5) {
-            this.mp -= 5;
-            this.hp = maxHp;
+        if (mp >= SELF_AID_MP_COST) {
+            mp -= SELF_AID_MP_COST;
+            hp = MAX_HP;
         }
     }
 
-    public int pray(int i) {
+    public int pray(int sec) {
 
         int beforeMp = mp;
-
-        int mpRecovery = (int) (Math.random() * 3) + i;
+        int mpRecovery = (int) (Math.random() * 3) + sec;
 
         mp += mpRecovery;
-        if (mp >= maxMp) {
-            mp = maxMp;
+        if (mp >= MAX_MP) {
+            mp = MAX_MP;
         }
 
         return mp - beforeMp;
