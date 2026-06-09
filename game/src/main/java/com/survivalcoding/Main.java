@@ -4,12 +4,10 @@ package com.survivalcoding;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        int CHP, CMP, CMaxHP, CMaxMP;
         // 인스턴스 생성
         Cleric cleric = new Cleric("Cleric");
 
-        int CHP, CMP, CMaxHP, CMaxMP;
-
-        
         CHP = cleric.hp;
         CMP = cleric.mp;
         CMaxHP = Cleric.maxHp;
