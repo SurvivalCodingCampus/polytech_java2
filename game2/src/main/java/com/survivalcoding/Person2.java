@@ -25,6 +25,5 @@ public class Person2 {
             int value = people.get(key);
             System.out.println(key + "의 나이는" + value + "살");
         }
-
     }
 }
