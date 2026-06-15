@@ -7,11 +7,12 @@ public class Main {
         // 인스턴스 생성
         Hero hero = new Hero();
 
-        hero.hp = 10;
+        hero.setHp(10);
+        ;
         hero.attack();  // 9
         hero.attack();  // 8
 
-        System.out.println(hero.hp);    // 8
+        System.out.println(hero.getHp());    // 8
 
         int a = 10;
         long l = 10L; // literal 리터럴
