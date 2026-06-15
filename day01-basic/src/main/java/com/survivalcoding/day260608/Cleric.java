@@ -1,4 +1,4 @@
-package com.survivalcoding;
+package com.survivalcoding.day260608;
 
 import java.util.Random;
 
@@ -16,9 +16,10 @@ public class Cleric {
 
     int pray(int sec) {
         Random point = new Random();
-        int randompoint = point.nextInt(sec, sec + 2);
-        int realRecovery = randompoint;
-        if (this.mp + randompoint > maxMp) {
+        int randomPoint = point.nextInt(sec, sec + 2);
+        int realRecovery = randomPoint;
+
+        if (this.mp + randomPoint > maxMp) {
             realRecovery = maxMp - this.mp;
         }
 

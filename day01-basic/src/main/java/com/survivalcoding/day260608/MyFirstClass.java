@@ -1,6 +1,7 @@
-package com.survivalcoding;
+package com.survivalcoding.day260608;
 
 public class MyFirstClass {
+    // main
     public static void main(String[] args) {
         int i = 0;
         i = 10;
@@ -8,5 +9,7 @@ public class MyFirstClass {
         String name = "홍길동";
 
         System.out.println("헬로!!!!");
+        // sout
+        System.out.println("헬로!!!!!!!!!!!!" + name);
     }
 }
