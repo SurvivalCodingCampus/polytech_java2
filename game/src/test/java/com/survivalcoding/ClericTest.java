@@ -1,5 +1,6 @@
 package com.survivalcoding;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,11 +9,21 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class ClericTest {
 
     @Test
+    @DisplayName("생성자 테스트")
+    void constructor_ValidData_CreatesObject() {
+        Cleric cleric1 = new Cleric("성직자1");
+
+        assertEquals("성직자2", cleric1.name);
+        assertEquals(Cleric.maxHP, cleric1.hp);
+        assertEquals(Cleric.maxMP, cleric1.mp);
+    }
+
+    @Test
     void selfAid() {
         final int initialHp = 5;
         final int initialMp = 10;
 
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("성직자");
 
         cleric.hp = initialHp;
         cleric.mp = initialMp;
