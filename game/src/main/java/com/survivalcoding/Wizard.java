@@ -1,8 +1,32 @@
 package com.survivalcoding;
 
 public class Wizard {
+    Wand wand;
+    private int hp;
+    private int mp;
     private String name;
-    private double power;
+
+    void heal(Hero hero) {
+        int basePoint = 10;
+        int recovPoint = (int) (basePoint * this.wand.getPower());
+        hero.setHP(hero.getHP() + recovPoint);
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
 
     public String getName() {
         return name;
@@ -10,13 +34,5 @@ public class Wizard {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getPower() {
-        return power;
-    }
-
-    public void setPower(double power) {
-        this.power = power;
     }
 }
