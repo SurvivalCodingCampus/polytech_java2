@@ -1,4 +1,5 @@
 package com.survivalcoding;
+
 import java.util.Random;
 
 public class Cleric {
@@ -15,7 +16,6 @@ public class Cleric {
             this.HP = maxHP;
         }
     }
-
 
     int pray(int sec) {
         int randomNUM = new Random().nextInt(3);
