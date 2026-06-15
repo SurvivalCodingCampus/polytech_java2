@@ -12,11 +12,11 @@ class HeroTest {
     void attack() {
         Hero hero = new Hero();
 
-        hero.hp = 10;
+        hero.getHp();
         hero.attack();
         hero.attack();
 
-        assertEquals(8, hero.hp);
+        assertEquals(8, hero.getHp());
     }
 
 }
