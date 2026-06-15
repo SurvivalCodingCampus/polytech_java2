@@ -12,10 +12,10 @@ HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다.
 package com.survivalcoding;
 
 public class Wand {
-    private String name;        // 지팡이 이름
-    private double power;       // 지팡이 마력
+    private String name;                   // 지팡이 이름
+    private double power;                  // 지팡이 마력
 
-    final int nameMaxLength = 3;    // 이름 최대 길이
+    final int nameMaxLength = 3;           // 이름 최대 길이
     static final double minPower = 0.5;    // 마력 최소값
     static final double maxPower = 100.0;  // 마력 최댓값
 
