@@ -13,6 +13,24 @@ public class Cleric {
     int hp = MAX_HP;
     int mp = MAX_MP;
 
+    Cleric(String name, int hp, int mp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name, int hp) {
+        this.name = name;
+        this.hp = hp;
+
+    }
+
+    Cleric(String name) {
+        this.name = name;
+
+    }
+
+
     // 셀프 에이드: 마나를 5 소비하여 체력을 최대로 회복
     void selfAid() {
         if (mp >= 5) {
