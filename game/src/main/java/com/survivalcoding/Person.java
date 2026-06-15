@@ -14,17 +14,14 @@ package com.survivalcoding;
 import java.time.LocalDate;
 
 public class Person {
-    static final int currentYear = LocalDate.now().getYear();
-    public static int defaultYear = currentYear;
+    public static int defaultYear = LocalDate.now().getYear();
 
     private String name;
     private int birthYear;
-    private int age;
 
     public Person(String name, int birthYear) {
         setName(name);
         setBirthYear(birthYear);
-        this.age = currentYear - birthYear;
     }
 
     public Person(String name) {
@@ -51,7 +48,7 @@ public class Person {
     }
 
     public int getAge() {
-        return age;
+        return LocalDate.now().getYear() - birthYear;
     }
 
 }

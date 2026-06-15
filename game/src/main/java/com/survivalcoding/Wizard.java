@@ -89,6 +89,9 @@ public class Wizard {
     }
 
     public void heal(Hero hero) {
+        if (hero == null) {
+            throw new IllegalArgumentException("Hero는 null 값이 올 수 없습니다.");
+        }
         int recoverPoint = (int) (basePoint * this.wand.getPower());
         hero.setHP(hero.getHp() + recoverPoint);
     }
