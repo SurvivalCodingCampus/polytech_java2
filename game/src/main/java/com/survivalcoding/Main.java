@@ -8,7 +8,8 @@ public class Main {
         //용사 생성 (ram 메모리에 용사 데이터 올리기)
         Hero hero = new Hero();
 
-        Hero.hp = 10;
+
+        //Hero.hp = 10;
 
     }
 }

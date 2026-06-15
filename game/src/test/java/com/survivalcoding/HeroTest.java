@@ -13,7 +13,7 @@ class HeroTest {
     void attack() {
         //given 준비
         Hero hero = new Hero();
-
+        Hero hero1 = new Hero("홍길동");
         //when 실행
         hero.hp = 10;
         hero.attack(); //9
