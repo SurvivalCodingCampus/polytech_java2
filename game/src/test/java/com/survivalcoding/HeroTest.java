@@ -4,8 +4,17 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class HeroTest {
+    @Test
+    @DisplayName("이름은 2이상이어야 한다")
+    void setName() {
+        Hero hero = new Hero();
+        assertThrows(IllegalArgumentException.class, () -> {
+            hero.setName("1");
+        });
+    }
 
     @Test
     @DisplayName("공격하면 내 hp 가 1씩 빠진다")

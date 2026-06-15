@@ -3,14 +3,29 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Cleric {
-    final int maxHP = 50;
-    final int maxMP = 10;
+    static final int maxHP = 50;
+    static final int maxMP = 10;
     final int selfAidMpCost = 5;
     final Random rand = new Random();
 
     String name;
     int hp = maxHP;
     int mp = maxMP;
+
+    public Cleric(String name) {
+        this.name = name;
+    }
+
+    public Cleric(String name, int hp) {
+        this.name = name;
+        this.hp = hp;
+    }
+
+    public Cleric(String name, int hp, int mp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
 
     void selfAid() {
         if (mp < selfAidMpCost) {
