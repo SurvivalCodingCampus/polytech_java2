@@ -11,13 +11,14 @@ public class Wizard {
         if (wand == null) {
             throw new IllegalArgumentException("지팡이는 필수로 있어야 합니다.");
         }
-        this.name = name;
+        this.wand = wand;
+        setWizardName(name);
+        setWizardMp(mp);
         if (hp < 0) {
-            this.hp = 0;
+            setWizardHp(0);
         } else {
-            this.hp = hp;
+            setWizardHp(hp);
         }
-        this.mp = mp;
     }
 
     public Wand getWand() {
@@ -25,6 +26,9 @@ public class Wizard {
     }
 
     public void setWand(Wand wand) {
+        if (wand == null) {
+            throw new IllegalArgumentException("지팡이는 필수로 있어야 합니다.");
+        }
         this.wand = wand;
     }
 
@@ -33,6 +37,9 @@ public class Wizard {
     }
 
     public void setWizardHp(int hp) {
+        if (hp < 0) {
+            throw new IllegalArgumentException("마법사의 HP는 0 이상이어야 합니다.");
+        }
         this.hp = hp;
     }
 

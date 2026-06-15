@@ -6,8 +6,8 @@ public class Wand {
 
 
     Wand(String name, double power) {
-        this.name = name;
-        this.power = power;
+        setWandName(name);
+        setWandPower(power);
     }
 
     public String getWandName() {
@@ -29,7 +29,7 @@ public class Wand {
     }
 
     public void setWandPower(double power) {
-        if (power <= 0.5 || power >= 100) {
+        if (power < 0.5 || power > 100) {
             throw new IllegalArgumentException("지팡이 마력은 0.5이상 100.0 이하여야 한다.");
         }
         this.power = power;

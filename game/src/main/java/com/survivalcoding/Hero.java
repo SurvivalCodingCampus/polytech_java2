@@ -9,6 +9,9 @@ public class Hero {
     }
 
     public void setHp(int hp) {
+        if (hp < 0) {
+            throw new IllegalArgumentException("HP는 0 이상이어야 합니다.");
+        }
         this.hp = hp;
     }
 
