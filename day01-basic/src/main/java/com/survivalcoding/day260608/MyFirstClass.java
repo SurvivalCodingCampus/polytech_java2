@@ -1,4 +1,4 @@
-package com.survivalcoding;
+package com.survivalcoding.day260608;
 
 public class MyFirstClass {
     // main
