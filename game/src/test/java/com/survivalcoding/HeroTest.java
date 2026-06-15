@@ -23,15 +23,15 @@ class HeroTest {
         Hero hero = new Hero();
 
         // when (실행)
-        hero.hp = 10;
+        hero.setHp(10);
         hero.attack();  // 9
 
         // then (검증)
-        assertEquals(9, hero.hp);    // 9
+        assertEquals(9, hero.getHp());    // 9
 
         hero.attack();  // 8
 
         // then (검증)
-        assertEquals(8, hero.hp);    // 8
+        assertEquals(8, hero.getHp());    // 8
     }
 }

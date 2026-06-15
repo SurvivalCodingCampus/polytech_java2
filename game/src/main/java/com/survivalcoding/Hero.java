@@ -3,10 +3,9 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Hero {
-    public static int money = 100;
-
-    private String name;
     private int hp;
+    Sword sword;
+    public static int money = 100;
 
     public int getHp() {
         return hp;
@@ -15,6 +14,8 @@ public class Hero {
     public void setHp(int hp) {
         this.hp = hp;
     }
+
+    private String name;
 
     public String getName() {
         return name;
@@ -25,6 +26,27 @@ public class Hero {
             throw new IllegalArgumentException("이름은 2글자 이상이어야 한다");
         }
         this.name = name;
+    }
+
+    public void bye() {
+        System.out.println("빠이");
+    }
+
+    private void die(){
+        System.out.println("죽었다");
+    }
+
+    void sleep(){
+        this.hp = 100;
+        System.out.println(this.name + "는 잠을 자고 회복했다!");
+    }
+
+    public void attack(Kinoko enmy){
+        System.out.println("반격을 받았다");
+        this.hp -= 12;
+        if(this.hp < 1){
+            die();
+        }
     }
 
     public static void setRandomMoney() {
