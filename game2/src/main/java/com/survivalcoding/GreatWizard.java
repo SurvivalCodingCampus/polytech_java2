@@ -12,6 +12,9 @@ public class GreatWizard extends Wizard {
 
     @Override
     public void setMp(int mp) {
+        if (mp < 0) {
+            throw new IllegalArgumentException("마법사의 MP는 0 이상이여야 한다");
+        }
         Mp = mp;
     }
 

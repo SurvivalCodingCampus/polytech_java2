@@ -29,7 +29,7 @@ public class Hero {
 
     public Hero(String name, int hp) {
         this.name = name;
-        this.hp = hp;
+        setHp(hp);
     }
 
     public int getMp() {

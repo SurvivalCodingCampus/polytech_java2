@@ -38,7 +38,7 @@ public class Wizard {
             throw new IllegalArgumentException("이름은 null이 아니어야 함");
         }
         if (name.length() < 3) {
-            throw new IllegalArgumentException("이름이 3문장 이상이여야 함");
+            throw new IllegalArgumentException("이름이 3문자 이상이여야 함");
         }
 
 
