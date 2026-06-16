@@ -5,16 +5,16 @@ import java.util.Random;
 public class Cleric {
     final int maxHp = 50;
     final int maxMp = 10;
-    int hp = maxHp;
-    int mp = maxMp;
-    String name;
+    public int hp = maxHp;
+    public int mp = maxMp;
+    public String name;
 
-    void selfAid() {
+    public void selfAid() {
         this.mp -= 5;
         this.hp = maxHp;
     }
 
-    int pray(int sec) {
+    public int pray(int sec) {
         Random point = new Random();
         int randomPoint = point.nextInt(sec, sec + 2);
         int realRecovery = randomPoint;
