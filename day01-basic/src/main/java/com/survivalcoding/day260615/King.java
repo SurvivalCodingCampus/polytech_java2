@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615.game;
+package com.survivalcoding.day260615;
 
 public class King {
     public void callHero(Hero hero){

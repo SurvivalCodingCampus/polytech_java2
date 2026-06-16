@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615.game;
+package com.survivalcoding.day260615;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

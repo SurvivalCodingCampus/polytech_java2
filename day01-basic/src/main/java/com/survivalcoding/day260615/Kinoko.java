@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615.game;
+package com.survivalcoding.day260615;
 
 public class Kinoko {
     final int LEVEL = 10;

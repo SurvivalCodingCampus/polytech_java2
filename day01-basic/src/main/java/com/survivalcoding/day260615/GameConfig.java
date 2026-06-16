@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615.game;
+package com.survivalcoding.day260615;
 
 // util 성 클래스
 public class GameConfig {

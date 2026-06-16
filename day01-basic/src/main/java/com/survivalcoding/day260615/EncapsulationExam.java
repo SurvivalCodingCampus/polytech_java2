@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615.game;
+package com.survivalcoding.day260615;
 
 public class EncapsulationExam {
     public static void main(String[] args) {

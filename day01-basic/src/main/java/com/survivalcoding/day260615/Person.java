@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615.game;
+package com.survivalcoding.day260615;
 import java.time.LocalDate;
 
 //1. 대한민국의 도시 이름 모음

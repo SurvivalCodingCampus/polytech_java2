@@ -1,4 +1,4 @@
-package com.survivalcoding.day260608.day260608;
+package com.survivalcoding.day260608;
 
 import com.survivalcoding.day260608.Cleric;
 import org.junit.jupiter.api.DisplayName;

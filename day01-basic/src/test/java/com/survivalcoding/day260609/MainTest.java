@@ -1,4 +1,4 @@
-package com.survivalcoding.day260609.day260609;
+package com.survivalcoding.day260609;
 
 import com.survivalcoding.day260609.Cleric;
 
