@@ -3,6 +3,8 @@ package com.survivalcoding;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class ClericTest {
 
     @Test
@@ -16,17 +18,10 @@ class ClericTest {
 
 
         //when
-        System.out.println(cleric.name);
-        System.out.println(cleric.hp);
-        System.out.println(cleric.mp);
-        System.out.println("===");
-        System.out.println(cleric2.name);
-        System.out.println(cleric2.hp);
-        System.out.println(cleric2.mp);
-        System.out.println("===");
-        System.out.println(cleric3.name);
-        System.out.println(cleric3.hp);
-        System.out.println(cleric3.mp);
+        assertEquals(cleric2.name, cleric2.hp);
+        assertEquals(cleric3.name, cleric3.hp);
+        assertEquals(cleric.name, cleric.hp);
+
 
         //then
 

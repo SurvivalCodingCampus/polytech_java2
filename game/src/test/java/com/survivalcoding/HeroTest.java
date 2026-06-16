@@ -27,5 +27,4 @@ class HeroTest {
         // then (검증)
         assertEquals(8, hero.hp);    // 8
     }
-
 }
