@@ -1,0 +1,44 @@
+@startuml
+
+class Wizard {
+    - {static} INITIAL_MP : int
+    - {static} HEAL_POINT : int
+    - {static} HEAL_MP_COST : int
+
+    - hp : int
+    - mp : int
+    - name : String
+    - wand : Wand
+
+    + heal(hero : Hero) : void
+    + getHp() : int
+    + setHp(hp : int) : void
+    + getMp() : int
+    + setMp(mp : int) : void
+    + getName() : String
+    + setName(name : String) : void
+    + getWand() : Wand
+    + setWand(wand : Wand) : void
+}
+
+class Wand {
+    - name : String
+    - power : double
+
+    + getName() : String
+    + setName(name : String) : void
+    + getPower() : double
+    + setPower(power : double) : void
+}
+
+class Hero {
+    - hp : int
+
+    + getHp() : int
+    + setHp(hp : int) : void
+}
+
+Wizard ..> Hero : heal(hero)
+Wizard --> Wand : wand
+
+@enduml
