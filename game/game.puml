@@ -1,0 +1,18 @@
+@startuml
+scale 3
+
+class SuperHero exdends Hero{
++void setFlying(bool flying)
++bool isflying()
+}
+
+class Hero{
+-int hp
+-String name
+
++void attack()
+}
+
+class wizard{}
+
+@enduml
