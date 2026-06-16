@@ -34,14 +34,19 @@ public class Hero {
         hero.name = "홍길동";
     }
 
-    public Hero() {
-        this.name = "홍길동";
-        hp = 100;
-    }
+//    public Hero() {
+//        this.name = "홍길동";
+//        hp = 100;
+//        System.out.println("Hero 생성자 호출");
+//    }
 
     public Hero(String name) {
+        this(name, 100);
+    }
+
+    public Hero(String name, int hp) {
         this.name = name;
-        hp = 100;
+        this.hp = hp;
     }
 
     // 나는 공격하면 hp 가 1씩 빠진다
@@ -49,5 +54,9 @@ public class Hero {
         hp -= 1;
         // sout
         System.out.println("공격했다");
+    }
+
+    public void run() {
+        System.out.println("달렸다");
     }
 }
