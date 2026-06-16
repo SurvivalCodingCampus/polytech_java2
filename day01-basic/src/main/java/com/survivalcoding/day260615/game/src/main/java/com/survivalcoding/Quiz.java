@@ -7,7 +7,7 @@ public class Quiz {
 //        Hero hero2 = hero1;
 //        hero2.hp = 200;
 
-        System.out.println(hero1.hp);   // 200
+        System.out.println(hero1.getHp());   // 200
 
         int number = 100;
         int number2 = number;
@@ -18,14 +18,14 @@ public class Quiz {
 
         System.out.println("================");
 
-        System.out.println(hero1.hp);
-        System.out.println(hero1.name);
+        System.out.println(hero1.getHp());
+        System.out.println(hero1.getName());
 
         System.out.println("================");
 
         Hero hero3 = new Hero("오준석");
-        System.out.println(hero3.hp);
-        System.out.println(hero3.name);
+        System.out.println(hero3.getHp());
+        System.out.println(hero3.getName());
 
         // 공용 자금
         System.out.println(Hero.money);
