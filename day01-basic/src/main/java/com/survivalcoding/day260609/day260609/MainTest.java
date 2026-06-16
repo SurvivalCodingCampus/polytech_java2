@@ -1,4 +1,4 @@
-package com.survivalcoding.day260609;
+package com.survivalcoding.day260609.day260609;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
