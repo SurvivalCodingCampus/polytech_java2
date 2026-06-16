@@ -1,7 +1,7 @@
 package com.survivalcoding;
 
 public class Person {
-    final int age;
+    int age;
     private String name;
     private int birthYear;
 
