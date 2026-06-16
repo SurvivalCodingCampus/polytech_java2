@@ -11,18 +11,17 @@ public class Cleric {
     int MP;
 
     Cleric(String name, int HP, int MP) {
-        this.name = "아서스";
+        this.name = name;
         this.HP = HP;
         this.MP = MP;
     }
 
     Cleric(String name, int HP) {
-        this.name = name;
-        this.HP = HP;
+        this(name, HP, MaxMP);
     }
 
     Cleric(String name) {
-        this.name = name;
+        this(name, MaxHP, MaxMP);
     }
 
     public static void main(String[] args) {

@@ -2,34 +2,37 @@ package com.survivalcoding;
 
 
 public class Hero {
-    String name;
-    int hp;
-    int mp;
+    public static int money = 100;
 
-    Hero() {
-        this.hp = 40;
-        this.mp = 5;
-        this.name = "아서스";
+    private String name;
+    private int hp;
+    private int mp;
+
+    public int getHp() {
+        return hp;
     }
 
-    Hero(String name) {
-        this.hp = 35;
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name.length() <= 1) {
+            throw new IllegalArgumentException("이름은 2글자 이상이어야 한다");
+        }
         this.name = name;
-    }
-
-
-    public static void main(String[] args) {
-
-        Hero hero = new Hero();
-        System.out.println(hero.name);
-        System.out.println(hero.hp);
-        System.out.println(hero.mp);
-
-        Hero hero1 = new Hero("아서스");
-        System.out.println(hero1.name);
-        System.out.println(hero1.hp);
-        System.out.println(hero1.mp);
-
     }
 
     void attack() {
