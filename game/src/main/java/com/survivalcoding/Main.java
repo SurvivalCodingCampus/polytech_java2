@@ -9,15 +9,19 @@ public class Main {
         Hero hero = new Hero("김용사");
         Hero hero2 = new Hero();
 
-        SuperHero superHero = new SuperHero("홍길동", 50);
+        SuperHero superHero = new SuperHero("홍길동", 100);
         superHero.run();
 
         PoisonSlime poisonSlime = new PoisonSlime("독");
         poisonSlime.setHp(100);
         poisonSlime.attack(superHero);
 
-        Wizard wizard = new Wizard();
-        wizard.heal(hero);
+//        Wizard wizard = new Wizard();
+//        wizard.heal(hero);
+
+        GreatWizard grateWizard = new GreatWizard();
+        grateWizard.heal(superHero);
+        grateWizard.superHeal(superHero);
 
 
         //hero.name = "김용사";
