@@ -1,0 +1,32 @@
+@startuml
+
+abstract class TangibleAsset {
+    - {final} name : String
+    - {final} price : int
+    - {final} color : String
+
+    + TangibleAsset(name : String, price : int, color : String)
+    + getName() : String
+    + getPrice() : int
+    + getColor() : String
+}
+
+class Book {
+    - {final} isbn : String
+
+    + Book(name : String, price : int, color : String, isbn : String)
+    + getIsbn() : String
+}
+
+class Computer {
+    - {final} makerName : String
+
+    + Computer(name : String, price : int, color : String, makerName : String)
+    + getMakerName() : String
+}
+
+TangibleAsset <|-- Book
+TangibleAsset <|-- Computer
+}
+
+@enduml
