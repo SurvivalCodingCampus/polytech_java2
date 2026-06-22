@@ -21,7 +21,7 @@ public class Wizard extends Hero implements Attackable, Healable {
     }
 
     @Override
-    public void heal(Hero hero){
+    public void heal(Hero hero) {
 
     }
 
