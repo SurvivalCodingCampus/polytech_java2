@@ -1,4 +1,4 @@
-package com.survivalcoding.day260615;
+package com.survivalcoding.day260622;
 
 // SuperHero : subclass
 // Hero : super class
