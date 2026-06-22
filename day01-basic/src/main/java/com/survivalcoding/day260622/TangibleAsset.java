@@ -7,7 +7,7 @@ public abstract class TangibleAsset extends Asset implements Thing {
     public TangibleAsset(String name, int price, String color, double weight) {
         super(name, price);
         this.color = color;
-        this.weight = weight;
+        setWeight(weight);
     }
 
     public String getColor() {
@@ -25,6 +25,10 @@ public abstract class TangibleAsset extends Asset implements Thing {
 
     @Override
     public void setWeight(double weight) {
+
+        if (weight < 0) {
+              throw new IllegalArgumentException("weight는 0 이상이어야 합니다.");
+         }
         this.weight = weight;
     }
 }
