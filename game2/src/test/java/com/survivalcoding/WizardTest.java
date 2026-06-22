@@ -70,26 +70,38 @@ class WizardTest {
     }
 
     @Test
-    @DisplayName("heal 쓰면 지팡이의 마력만큼 HP가 회복되어야 한다")
+    @DisplayName("초기 마나는 100이 되어야 한다")
+    void baseMp() {
+        Wizard wizard = new Wizard();
+
+        assertEquals(100, wizard.getMp());
+    }
+
+    @Test
+    @DisplayName("heal 쓰면 mp10을 소모하고 hp가 20을 회복시켜야 한다")
     void heal() {
-        double test = 1.5;
-        int test2 = 10;
-        int test3 = 30;
+        int baseHp = 30;
+        int baseMp1 = 10;
+        int baseMp2 = 9;
+        int testMp = 10;
+        int baseHeal = 20;
 
 
         //Given
         Wizard wizard = new Wizard();
-        Wand wand = new Wand();
         Hero hero = new Hero();
-        wand.setPower(test);
-        int basePoint = test2;
-        hero.setHp(test3);
-        wizard.setWand(wand);
+        hero.setHp(baseHp);
+
 
         //When
+        wizard.setMp(baseMp1);
         wizard.heal(hero);
         //Then
-        assertEquals(test * test2 + test3, hero.getHp());
 
+        assertEquals(baseHp + baseHeal, hero.getHp());
+        assertEquals(baseMp1 - testMp, wizard.getMp(), "힐을 시전했습니다.");
+
+        wizard.setMp(baseMp2);
+        wizard.heal(hero);
     }
 }

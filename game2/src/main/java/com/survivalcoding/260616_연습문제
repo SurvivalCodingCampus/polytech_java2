@@ -1,0 +1,14 @@
+슈퍼클래스          서브클래스
+1 Person            Student
+2 Car               Engine
+3 Father            Child
+4 Food              Susi
+5 SuperMan          Man
+
+2, 3, 5
+
+부모 클래스와 자식 클래스 1개씩
+
+기계            기계       책
+Phone          Car        Dictionary
+아이폰          슈퍼카      영어사전

@@ -1,0 +1,59 @@
+@startuml
+class SuperHero extends Hero {
+   +void setFlying(bool flying)
+   +boolean isFlying()
+   + run()+
+}
+class Hero {
+   - int hp 100
+   - int mp
+   - int money 100
+   -String name
+   + void attack()
+   + run()
+}
+class Cleric {
+   - int hp
+   - int mp
+   - int MaxHP
+   - int MaxMP
+   - String name
+   + selfAid()
+   + pray()
+}
+class GreatWizard extends Wizard {
+   +heal()+
+   +superHeal()
+}
+
+class Wizard {
+   - int hp
+   - int mp = 100
+   - Wand wand
+   - String name
+   + setWand()
+   + heal()
+}
+
+class Wand {
+   - String name
+   - double power
+}
+
+class Person {
+   -int age
+   -String name
+   -int birthYear
+}
+class PoisonSlime extends Slime {
+   +attack()+
+}
+
+class Slime {
+   -String suffix
+   -int hp
+   +attack()
+}
+
+
+@enduml
