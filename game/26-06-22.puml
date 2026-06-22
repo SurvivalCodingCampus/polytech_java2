@@ -1,6 +1,7 @@
 @startuml
 package com.survivalcoding {
 
+    ' === [기존] 캐릭터 & 몬스터 영역 ===
     class Cleric {
         {static} +MAXHP : int = 50
         {static} +MAXMP : int = 10
@@ -87,6 +88,43 @@ package com.survivalcoding {
         +getPoisonCount() : int
     }
 
+    ' === [신규] 자산(Asset) 및 아이템 영역 ===
+    abstract class Asset {
+        -name : String
+        -price : int
+        +Asset(name: String, price: int)
+        +getName() : String
+        +setName(name: String) : void
+        +getPrice() : int
+        +setPrice(price: int) : void
+    }
+
+    interface Thing {
+        +getWeight() : double
+        +setWeight(weight: double) : void
+    }
+
+    abstract class TangibleAsset {
+        -color : String
+        -weight : double
+        +TangibleAsset(name: String, price: int, color: String, weight: double)
+        +getColor() : String
+        +setColor(color: String) : void
+    }
+
+    class Book {
+        -isbn : String
+        +Book(name: String, price: int, color: String, isbn: String, weight: double)
+        +getIsbn() : String
+        +setIsbn(isbn: String) : void
+    }
+
+    class Computer {
+        -makerName : String
+        +Computer(name: String, price: int, color: String, makerName: String, weight: double)
+        +getMakerName() : String
+        +setMakerName(makerName: String) : void
+    }
 }
 
 ' ---- 클래스 간의 관계 표현 영역 ----
@@ -96,11 +134,17 @@ Wizard "1" --> "1" Wand : 가집니다 (has)
 Wizard ..> Hero : heal()에서 참조 (uses)
 Wizard <|-- GreatWizard : 상속 (extends)
 GreatWizard ..> Hero : heal(), superHeal()에서 참조 (uses)
-Wizard <|-- Person : 상속 (extends)
+Person <|-- Wizard : 상속 (extends) *어색했던 화살표 방향 수정*
 
 ' 2. 슬라임 관련 관계
 Slime <|-- PoisonSlime : 상속 (extends)
 Slime ..> Hero : attack()에서 참조 (uses)
 PoisonSlime ..> Hero : attack()에서 참조 (uses)
+
+' 3. 자산(Asset) 관련 관계 (신규 추가)
+Asset <|-- TangibleAsset : 상속 (extends)
+Thing <|.. TangibleAsset : 구현 (implements)
+TangibleAsset <|-- Book : 상속 (extends)
+TangibleAsset <|-- Computer : 상속 (extends)
 
 @enduml
