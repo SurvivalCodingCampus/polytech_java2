@@ -1,0 +1,105 @@
+@startuml
+package com.survivalcoding {
+
+    class Cleric {
+        {static} +MAXHP : int = 50
+        {static} +MAXMP : int = 10
+        -SelfAidCost : int = 5 {readOnly}
+        ~name : String
+        ~HP : int = 50
+        ~MP : int = 10
+        +Cleric(name: String)
+        +Cleric(name: String, hp: int)
+        +Cleric(name: String, hp: int, mp: int)
+        ~selfAid() : void
+        ~pray(time: int) : int
+    }
+
+    class Person {
+        -name : String {readOnly}
+        -birthYear : int {readOnly}
+        +Person(name: String, brithYear: int)
+        +Person(name: String)
+        +getName() : String
+        +getBirthYear() : int
+        +getAge() : int
+    }
+
+    class Wand {
+        -name : String
+        -power : double
+        +getName() : String
+        +setName(name: String) : void
+        +getPower() : double
+        +setPower(power: double) : void
+    }
+
+    class Hero {
+        -name : String
+        -HP : int
+        -MaxHP : int = 100
+        +Hero(name: String, HP: int)
+        +getHP() : int
+        +setHP(HP: int) : void
+        +getName() : String
+        +setName(name: String) : void
+        +getMaxHP() : int
+        +setMaxHP(maxHP: int) : void
+        ~attack() : void
+    }
+
+    class Wizard {
+        -wand : Wand
+        -hp : int
+        -mp : int
+        -name : String
+        ~heal(hero: Hero) : void
+        +getWand() : Wand
+        +setWand(wand: Wand) : void
+        +getHp() : int
+        +setHp(hp: int) : void
+        +getMp() : int
+        +setMp(mp: int) : void
+        +getName() : String
+        +setName(name: String) : void
+    }
+
+    class GreatWizard {
+        +GreatWizard()
+        ~heal(hero: Hero) : void
+        +superHeal(hero: Hero) : void
+    }
+
+    class Slime {
+        -suffix : String {readOnly}
+        -hp : int
+        +Slime(suffix: String, hp: int)
+        +getSuffix() : String
+        +getHp() : int
+        +setHp(hp: int) : void
+        ~attack(hero: Hero) : void
+    }
+
+    class PoisonSlime {
+        -poisonCount : int = 5
+        +PoisonSlime(suffix: String)
+        +attack(hero: Hero) : void
+        +getPoisonCount() : int
+    }
+
+}
+
+' ---- 클래스 간의 관계 표현 영역 ----
+
+' 1. 마법사 및 대마법사 관련 관계
+Wizard "1" --> "1" Wand : 가집니다 (has)
+Wizard ..> Hero : heal()에서 참조 (uses)
+Wizard <|-- GreatWizard : 상속 (extends)
+GreatWizard ..> Hero : heal(), superHeal()에서 참조 (uses)
+
+' 2. 슬라임 관련 관계
+Slime <|-- PoisonSlime : 상속 (extends)
+Slime ..> Hero : attack()에서 참조 (uses)
+PoisonSlime ..> Hero : attack()에서 참조 (uses)
+
+@enduml

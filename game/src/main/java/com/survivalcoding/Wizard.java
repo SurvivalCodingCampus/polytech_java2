@@ -3,13 +3,18 @@ package com.survivalcoding;
 public class Wizard {
     private Wand wand;
     private int hp;
-    private int mp;
+    private int mp = 100;
     private String name;
 
     void heal(Hero hero) {
-        int basePoint = 10;
-        int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHP(hero.getHP() + recovPoint);
+        if (this.mp < 10) {
+            System.out.println("마나가 부족합니다.");
+            return;
+        }
+
+        this.mp -= 10;
+        hero.setHP(hero.getHP() + 20);
+        System.out.println("힐을 시전 했습니다. 대상 HP : " + hero.getHP());
     }
 
     public Wand getWand() {
