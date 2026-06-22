@@ -1,12 +1,14 @@
 @startuml
-scale 2
+scale 1.5
 
-class SuperHero extends Hero {
+class SuperHero extends Hero implements Flyable {
     +void setFlying(bool flying)
     +boolean isFlying()
+    +void attack()
+    +void move(int sec)
 }
 
-class Hero {
+class Hero implements Attackable, Moveable {
     -int hp
     -String name
 
@@ -14,5 +16,17 @@ class Hero {
 }
 
 class Wizard
+
+interface Attackable {
+    void attack(Slime slime)
+}
+
+interface Moveable {
+    void move(int sec)
+}
+
+interface Flyable {
+    void setFlying(bool flying)
+}
 
 @enduml
