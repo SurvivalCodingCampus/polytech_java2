@@ -1,10 +1,33 @@
 package com.survivalcoding;
 
 public class Hero {
-    String name;
+    private String name;
     private int hp;
+    private int maxHp = 300;
+
+    Hero(String name, int hp) {
+        setName(name);
+        setHp(hp);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    public void setMaxHp(int maxHp) {
+        this.maxHp = maxHp;
+    }
 
     public int getHp() {
+
         return hp;
     }
 
