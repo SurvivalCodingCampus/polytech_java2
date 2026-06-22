@@ -34,12 +34,7 @@ public class PersonPerson {
 
 }
 
-//컬렉션
-
-//2장 연습문제 1
-//1),3)은 set으로
-//2)은 list로
-
+//test 파일을 따로 만들지 않고 여기서 바로 작성한 것
 class main {
     static void main() {
         List<PersonPerson> name = new ArrayList<>();
