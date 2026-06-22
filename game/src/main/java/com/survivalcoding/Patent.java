@@ -11,4 +11,8 @@ public class Patent extends IntangibleAsset {
     public String getPatentNumber() {
         return patentNumber;
     }
+
+    public void setPatentNumber(String patentNumber) {
+        this.patentNumber = patentNumber;
+    }
 }
