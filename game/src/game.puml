@@ -1,0 +1,39 @@
+@startuml
+
+class Hero {
+  - name: String
+  - hp: int
+  - maxHP: int
+  --
+  + maxHp()
+  + setHp(hp: int)
+  + getHp(): int
+  + setRandomMoney() {static}
+}
+
+class Wizard {
+  - hp: int
+  - mp: int
+  - name: String
+  - wand: Wand
+  --
+  + wizard(mp: int)
+  + heal(hero: Hero)
+  + setMp(mp: int)
+  + getMp(): int
+  + getHp(): int
+  + setHp(hp: int)
+}
+
+class GreatWizard extends Wizard {
+  - mp: int
+  --
+  + GreatWizard(mp: int)
+  + heal(hero: Hero)
+  + superHeal(hero: Hero)
+}
+
+Wizard ..> Hero : heal(hero)
+GreatWizard ..> Hero : heal(hero)
+
+@enduml

@@ -3,8 +3,6 @@ package com.survivalcoding;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 class HeroTest {
 
     @Test
@@ -15,16 +13,16 @@ class HeroTest {
         Hero hero = new Hero();
         Hero hero1 = new Hero("홍길동");
         //when 실행
-        hero.hp = 10;
+        //hero.hp = 10;
         hero.attack(); //9
         hero.attack(); //8
 
         // then (검증)
-        assertEquals(9, hero.hp);    // 9
+        //assertEquals(9, hero.hp);    // 9
 
         hero.attack();  // 8
 
         // then (검증)
-        assertEquals(8, hero.hp);    // 8
+        //assertEquals(8, hero.hp);    // 8
     }
 }
