@@ -21,7 +21,6 @@ class Book{
 }
 class Patent
 
-
 Asset <|-- TangibleAsset
 Asset <|-- IntangibleAsset
 TangibleAsset <|-- Computer
