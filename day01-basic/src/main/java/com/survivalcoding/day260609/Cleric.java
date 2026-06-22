@@ -3,22 +3,22 @@ package com.survivalcoding.day260609;
 import java.util.Random;
 
 public class Cleric {
-    static final int maxHp = 50;
-    static final int maxMp = 10;
-    int hp;
-    int mp;
-    String name;
+    public static final int maxHp = 50;
+    public static final int maxMp = 10;
+    public int hp;
+    public int mp;
+    public String name;
 
 
-    Cleric(String name){
+    public Cleric(String name){
         this(name, maxHp, maxMp);
     }
 
-    Cleric(String name, int hp){
+    public Cleric(String name, int hp){
         this(name, hp, maxMp);
     }
 
-    Cleric(String name, int hp, int mp){
+    public Cleric(String name, int hp, int mp){
         this.name = name;
         this.hp = hp;
         this.mp = mp;
