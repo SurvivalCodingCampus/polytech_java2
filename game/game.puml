@@ -1,0 +1,31 @@
+@startuml
+scale 2
+
+class SuperHero extends Hero {
+    +void setFlying(bool flying)
+    +boolean isFlying()
+}
+
+class Hero {
+    -int hp //private
+    -String name
+
+    +void attack()
+}
+
+class Wizard {
+    +void heal(Hero)
+}
+
+class GreatWizard extends Wizard {
+    +void superHeal(Hero)
+}
+
+class Slime {
+    +void attack(Hero)
+}
+
+class PoisonSlime extends Slime {
+    +void attack(Hero) <<@Override>>
+}
+@enduml

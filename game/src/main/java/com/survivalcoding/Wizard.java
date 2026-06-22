@@ -1,6 +1,12 @@
 package com.survivalcoding;
 
 public class Wizard {
+    static final int MAX_MP = 100;
+    int hp;
+    int mp = MAX_MP;
+    Wand wand;
+    private String name;
+
     public int getHp() {
         return hp;
     }
@@ -14,8 +20,6 @@ public class Wizard {
         this.hp = hp;
     }
 
-    int hp;
-
     public int getMp() {
         return mp;
     }
@@ -27,8 +31,6 @@ public class Wizard {
         }
         this.mp = mp;
     }
-
-    int mp;
 
     public String getName() {
         return name;
@@ -45,8 +47,6 @@ public class Wizard {
         this.name = name;
     }
 
-    private String name;
-
     public Wand getWand() {
         return wand;
     }
@@ -59,11 +59,11 @@ public class Wizard {
         this.wand = wand;
     }
 
-    Wand wand;
-
     void heal(Hero hero) {
-        int basePoint = 10;
-        int recovPoint = (int) (basePoint * this.wand.power);
-        hero.setHp(hero.getHp() + recovPoint);
+        int recoverPoint =  20;
+        int usedPoint = 10;
+
+        hero.setHp(hero.getHp() + recoverPoint);
+        hero.setMp(hero.getMp() - usedPoint);
     }
 }
