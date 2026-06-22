@@ -1,8 +1,8 @@
 package com.survivalcoding.day260622;
 
-public abstract class TangibleAsset extends Asset implements Thing{
-    String color;
-    double weight;
+public abstract class TangibleAsset extends Asset implements Thing {
+    private String color;
+    private double weight;
 
     public TangibleAsset(String name, int price, String color, double weight) {
         super(name, price);
@@ -10,13 +10,21 @@ public abstract class TangibleAsset extends Asset implements Thing{
         this.weight = weight;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
-    public double getWeight(){
+    public double getWeight() {
         return this.weight;
     }
 
     @Override
-    public void setWeight(double weight){
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 }

@@ -16,10 +16,10 @@ class BookTest {
     void bookCreationTest() {
         Book book = new Book(TEST_BOOK_NAME, TEST_BOOK_PRICE, TEST_BOOK_COLOR, TEST_BOOK_WEIGHT, TEST_BOOK_ISBN);
 
-        assertEquals(TEST_BOOK_NAME, book.name, "이름이 일치해야 합니다.");
-        assertEquals(TEST_BOOK_PRICE, book.price, "가격이 일치해야 합니다.");
-        assertEquals(TEST_BOOK_COLOR, book.color, "색상이 일치해야 합니다.");
-        assertEquals(TEST_BOOK_ISBN, book.isbn, "ISBN이 일치해야 합니다.");
+        assertEquals(TEST_BOOK_NAME, book.getName(), "이름이 일치해야 합니다.");
+        assertEquals(TEST_BOOK_PRICE, book.getPrice(), "가격이 일치해야 합니다.");
+        assertEquals(TEST_BOOK_COLOR, book.getColor(), "색상이 일치해야 합니다.");
+        assertEquals(TEST_BOOK_ISBN, book.getIsbn(), "ISBN이 일치해야 합니다.");
         assertEquals(TEST_BOOK_WEIGHT, book.getWeight(), "무게가 일치해야 합니다.");
     }
 }
