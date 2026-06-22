@@ -1,15 +1,25 @@
 package com.survivalcoding;
 
 public class Wizard {
+    private static final int INITIAL_MP = 100;
+    private static final int HEAL_POINT = 20;
+    private static final int HEAL_MP_COST = 10;
+
     private int hp;
-    private int mp;
+    private int mp = INITIAL_MP;
     private String name;
     private Wand wand;
 
     public void heal(Hero hero) {
-        int basePoint = 10;
-        int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getHp() + recovPoint);
+        if (mp < HEAL_MP_COST) {
+            System.out.println("마나가 부족합니다");
+            return;
+        }
+
+        hero.setHp(hero.getHp() + HEAL_POINT);
+        mp -= HEAL_MP_COST;
+
+        System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
     }
 
     public int getHp() {

@@ -1,0 +1,34 @@
+@startuml
+
+class Slime {
+    ~ final suffix : String
+    ~ hp : int
+    ~ slimeDamage : int
+
+    + Slime(suffix : String)
+    + getSuffix() : String
+    + getHp() : int
+    + setHp(hp : int) : void
+    ~ attack(hero : Hero) : void
+}
+
+class PoisonSlime {
+    - poisonCount : int
+
+    + PoisonSlime(suffix : String)
+    ~ attack(hero : Hero) : void
+    + getPoisonCount() : int
+}
+
+class Hero {
+    - hp : int
+
+    + getHp() : int
+    + setHp(hp : int) : void
+}
+
+PoisonSlime --|> Slime
+Slime ..> Hero : attack(hero)
+PoisonSlime ..> Hero : attack(hero)
+
+@enduml

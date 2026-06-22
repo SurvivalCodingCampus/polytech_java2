@@ -1,6 +1,8 @@
 package com.survivalcoding;
 
 public class Hero {
+    public static final int MAX_HP = 100;
+
     private String name;
     private int hp;
 
