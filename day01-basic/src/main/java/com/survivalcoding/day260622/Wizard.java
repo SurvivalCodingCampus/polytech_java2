@@ -1,6 +1,6 @@
 package com.survivalcoding.day260622;
 
-public class Wizard {
+public class Wizard extends Hero implements Attackable, Healable {
     private double power;
     private int hp;
 
@@ -13,6 +13,15 @@ public class Wizard {
     }
 
     public void fireball(Hero hero) {
+
+    }
+
+    public Wizard(String name, int hp){
+        super(name, hp);
+    }
+
+    @Override
+    public void heal(Hero hero){
 
     }
 

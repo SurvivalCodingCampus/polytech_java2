@@ -8,8 +8,8 @@ public class Main {
         Hero hero = new Hero();
 
         hero.setHp(10);
-        hero.attack();  // 9
-        hero.attack();  // 8
+      //  hero.attac/();  // 9
+      //  hero.attack();  // 8
 
         System.out.println(hero.getHp());    // 8
 

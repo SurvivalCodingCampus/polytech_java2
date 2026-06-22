@@ -1,5 +1,7 @@
 package com.survivalcoding.day260622;
 
+import com.survivalcoding.day260616.Slime;
+
 // SuperHero : subclass
 // Hero : super class
 public class SuperHero extends Hero {
@@ -14,9 +16,10 @@ public class SuperHero extends Hero {
     public static void main(String[] args) {
 //        SuperHero superHero = new SuperHero();
         SuperHero superHero = new SuperHero("홍길동", 50);
+        Slime slime = new Slime("Slime");
         superHero.run();
         superHero.setFlying(true);
-        superHero.attack();
+        superHero.attack(slime);
     }
 
 //    public SuperHero() {
@@ -42,8 +45,8 @@ public class SuperHero extends Hero {
     }
 
     @Override
-    public void attack() {
-        super.attack();
+    public void attack(Slime slime) {
+        super.attack(slime);
         if (isFlying) {
             System.out.println("한번 더 때려");
         }
