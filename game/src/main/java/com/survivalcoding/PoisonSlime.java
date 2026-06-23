@@ -20,6 +20,7 @@ public class PoisonSlime extends Slime {
             hero.setHp(hero.getHp() - poisonDamage);
             System.out.println(poisonDamage + "포인트 데미지");
             poisonCount--;
+            return;
         }
         if (poisonCount <= 0) {
             super.attack(hero);

@@ -2,10 +2,10 @@
 scale 1
 
 class GreatWizard extends Wizard {
-    -int maxHp = 300
-    +GreatWizard(String:name, int:hp, int:mp
-    <<super(name,hp,np)>>, setMp(150))
-    +<<override>>void heal(Hero hero)
+    -int gmp = 150
+    +GreatWizard(String name, int hp, int mp)
+
+    +<Override>void heal(Hero hero)
     +void superHeal(Hero hero)
 }
 
@@ -15,8 +15,8 @@ class Wizard {
     -int mp = 100
     -Wand wand
 
-    +Wizard(String:name, int:hp, int:mp, Wand:wand)
-    +Wizard(String:name, int:hp, int:mp)
+    +Wizard(String name, int hp, int mp, Wand wand)
+    +Wizard(String name, int hp, int mp)
     +void heal(Hero hero)
 }
 
@@ -24,22 +24,23 @@ class Wizard {
 class PoisonSlime extends Slime {
     -int poisonCount = 5
 
-    +PoisonSlime(String:suffix<<super(suffix)>>)
-    +<<override>>void attack(Hero hero)
+    +PoisonSlime(String suffix)
+
+    +<Override>void attack(Hero hero)
 }
 
 class Slime {
     -final String suffix
     -int hp = 100
 
-    +Slime(String:suffix)
+    +Slime(String suffix)
     +void attack(Hero hero)
 }
 
 class Hero {
-    -String name;
-    -int hp;
-    -int maxHp = 300;
+    -String name
+    -int hp
+    -int maxHp = 300
 
     +Hero(String name, int hp)
     +void attack()

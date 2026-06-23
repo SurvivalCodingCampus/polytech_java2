@@ -1,0 +1,53 @@
+@startuml
+scale 1
+
+abstract class Asset{
+    -String name
+
+    +TotalAsset(String name)
+}
+
+abstract class TangiblAsset extends Asset implements Thing{
+    -int price
+    -String color
+    -double weight
+
+    +TangiblAsset(String name, int price, String color)
+
+    +double getWeight()
+    +void setWeight(double weight)
+}
+
+class Book extends TangiblAsset{
+    -String isbn
+
+    +Book(String name, int price, String color, String isbn)
+
+    +<Override> double weight()
+}
+
+class Computer extends TangiblAsset{
+    -String isbn
+
+    +Computer(String name, int price, String color, String makerName)
+
+    +<Override> double weight()
+}
+
+abstract class IntangibleAsset extends Asset{
+    +IntangibleAsset(String name)
+}
+
+class Patent extends IntangibleAsset {
+    -String patentNumber
+
+    +Patent(String name, String patentNumber)
+}
+
+interface Thing {
+    -double weight();
+    -void setWeight(double weight);
+}
+
+
+@enduml

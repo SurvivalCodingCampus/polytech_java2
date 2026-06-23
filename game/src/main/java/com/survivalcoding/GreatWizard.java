@@ -1,11 +1,11 @@
 package com.survivalcoding;
 
 public class GreatWizard extends Wizard {
-    private int maxHp = 300;
+    private int gmp = 150;
 
     GreatWizard(String name, int hp, int mp) {
         super(name, hp, mp);
-        setMp(150);
+        setMp(this.gmp);
     }
 
     @Override

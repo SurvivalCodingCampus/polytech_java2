@@ -23,7 +23,13 @@ public class Hero {
     }
 
     public void setMaxHp(int maxHp) {
+        if (maxHp < 0) {
+            throw new IllegalArgumentException("최대 HP는 0 이상이어야 합니다.");
+        }
         this.maxHp = maxHp;
+        if (this.hp > maxHp) {
+            this.hp = maxHp;
+        }
     }
 
     public int getHp() {
@@ -35,7 +41,7 @@ public class Hero {
         if (hp < 0) {
             throw new IllegalArgumentException("HP는 0 이상이어야 합니다.");
         }
-        this.hp = hp;
+        this.hp = Math.min(hp, maxHp);
     }
 
     void attack() {
