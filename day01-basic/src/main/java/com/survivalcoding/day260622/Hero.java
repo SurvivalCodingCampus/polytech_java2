@@ -1,8 +1,10 @@
 package com.survivalcoding.day260622;
 
+import com.survivalcoding.day260616.Slime;
+
 import java.util.Random;
 
-public class Hero {
+public class Hero implements Attackable {
     public static int money = 100;
 
     private String name;
@@ -48,8 +50,9 @@ public class Hero {
     }
 
     // 나는 공격하면 hp 가 1씩 빠진다
-    public void attack() {
-        hp -= 1;
+    @Override
+    public void attack(Slime slime) {
+        hp -= 10;
         // sout
         System.out.println("공격했다");
     }
