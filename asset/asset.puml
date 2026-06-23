@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 2
+
+class Book
+class Computer
+
+interface Thing {
+    double getWeight()
+    void setWeight(double weight)
+}
+
+@enduml
