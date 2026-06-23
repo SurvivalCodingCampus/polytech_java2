@@ -50,6 +50,10 @@ public abstract class IntangibleAsset extends Asset {
         if (acquiredDate == null) {
             throw new IllegalArgumentException("취득일을 작성해야합니다.");
         }
-        this.acquiredDate = LocalDate.parse(acquiredDate);
+        try {
+            this.acquiredDate = LocalDate.parse(acquiredDate);
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("취득일 작성 형식이 틀립니다.");
+        }
     }
 }
