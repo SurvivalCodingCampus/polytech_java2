@@ -1,0 +1,19 @@
+package com.survivalcoding;
+
+public class Computer extends TangibleAsset {
+    private String makerName;
+
+    public Computer(String name, int price, double weight, String color, String makerName) {
+        super(name, price, weight, color);
+        this.makerName = makerName;
+
+    }
+
+    public String getMakerName() {
+        return makerName;
+    }
+
+    public void setMakerName(String makerName) {
+        this.makerName = makerName;
+    }
+}
