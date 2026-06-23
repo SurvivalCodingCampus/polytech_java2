@@ -2,7 +2,7 @@ package com.survivalcoding;
 
 import java.time.LocalDate;
 
-public class Patent extends IntangibleAsset{
+public class Patent extends IntangibleAsset {
     private String inventor;
     private int patentNumber;
 

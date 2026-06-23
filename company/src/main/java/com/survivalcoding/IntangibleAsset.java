@@ -5,30 +5,30 @@ import java.time.format.DateTimeParseException;
 
 public abstract class IntangibleAsset extends Asset {
     // name, date
-    private String assetType;
+    private String intangibleAssetType;
     private LocalDate acquiredDate;
 
-    public IntangibleAsset(String name, String assetType, LocalDate acquiredDate) {
+    public IntangibleAsset(String name, String intangibleAssetType, LocalDate acquiredDate) {
         super(name);
-        setAssetType(assetType);
+        setIntangibleAssetType(intangibleAssetType);
         setAcquiredDate(acquiredDate);
     }
 
-    public IntangibleAsset(String name, String assetType, String acquiredDate) {
+    public IntangibleAsset(String name, String intangibleAssetType, String acquiredDate) {
         super(name);
-        setAssetType(assetType);
+        setIntangibleAssetType(intangibleAssetType);
         setAcquiredDate(acquiredDate);
     }
 
-    public String getAssetType() {
-        return assetType;
+    public String getIntangibleAssetType() {
+        return intangibleAssetType;
     }
 
-    public void setAssetType(String assetType) {
-        if (assetType == null) {
+    public void setIntangibleAssetType(String intangibleAssetType) {
+        if (intangibleAssetType == null) {
             throw new IllegalArgumentException("자산 종류가 비어있습니다.");
         }
-        this.assetType = assetType;
+        this.intangibleAssetType = intangibleAssetType;
     }
 
     public LocalDate getAcquiredDate() {

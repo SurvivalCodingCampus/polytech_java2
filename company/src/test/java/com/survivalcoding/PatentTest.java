@@ -1,7 +1,10 @@
 package com.survivalcoding;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PatentTest {
@@ -30,7 +33,7 @@ class PatentTest {
         // when then
         assertAll("Patent getter 검증 실패",
                 () -> assertEquals(testName, testPatent.getName()),
-                () -> assertEquals(testAssetType, testPatent.getAssetType()),
+                () -> assertEquals(testAssetType, testPatent.getIntangibleAssetType()),
                 () -> assertEquals(LocalDate.parse(testAcquiredDate), testPatent.getAcquiredDate()),
                 () -> assertEquals(testInventor, testPatent.getInventor()),
                 () -> assertEquals(testPatentNumber, testPatent.getPatentNumber())
@@ -52,12 +55,12 @@ class PatentTest {
 
         // when
         testPatent.setName(changeName);
-        testPatent.setAssetType(changeAssetType);
+        testPatent.setIntangibleAssetType(changeAssetType);
 
         // then
         assertAll("Patent 변경 값 검증 실패",
                 () -> assertEquals(changeName, testPatent.getName()),
-                () -> assertEquals(changeAssetType, testPatent.getAssetType())
+                () -> assertEquals(changeAssetType, testPatent.getIntangibleAssetType())
         );
     }
 

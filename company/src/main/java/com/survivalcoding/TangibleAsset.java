@@ -1,6 +1,6 @@
 package com.survivalcoding;
 
-public abstract class TangibleAsset extends Asset implements Thing{
+public abstract class TangibleAsset extends Asset implements Thing {
     private int price;
     private String color;
     private double weight;
