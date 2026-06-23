@@ -1,0 +1,36 @@
+@startuml
+
+abstract class Asset {
+    name : String
+}
+
+interface Thing {
+    +getWeight() : double
+    +setWeight(weight : double) : void
+}
+
+abstract class TangibleAsset {
+    price : int
+    color : String
+    weight : double
+}
+
+abstract class IntangibleAsset
+
+class Book {
+    isbn : String
+}
+
+class Computer {
+    makerName : String
+}
+
+Asset <|-- TangibleAsset
+Asset <|-- IntangibleAsset
+
+Thing <|.. TangibleAsset
+
+TangibleAsset <|-- Book
+TangibleAsset <|-- Computer
+
+@enduml

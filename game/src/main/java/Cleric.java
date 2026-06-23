@@ -1,4 +1,16 @@
 public class Cleric {
+    public Cleric(String name, int hp, int mp){
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+    public Cleric(String name, int hp){
+        this(name, hp, MX_MP);
+    }
+    public Cleric(String name){
+        this(name,MX_HP,MX_MP);
+    }
+
     static final int MX_HP = 50;
     static final int MX_MP = 10;
     String name;
