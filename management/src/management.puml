@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Asset {
+   -String name;
+   -int price;
+}
+interface Thing {
+    +{abstract} double getWeight()
+    +{abstract} double setWeight(double weight)
+    +{abstract} String getColor()
+    +{abstract} String setColor(String color)
+}
+abstract class TangibleAsset {
+    -String name;
+    -int price;
+    +double getWeight() <<override>>
+    +double setWeight(double weight) <<override>>
+    +String getColor() <<override>>
+    +String setColor(String color) <<override>>
+    +void Depreciation();
+
+}
+abstract class IntangibleAsset {
+    -String name;
+    -int price;
+}
+
+
+Asset <|-- TangibleAsset
+Thing <|.. TangibleAsset
+
+TangibleAsset <|-- Computer
+TangibleAsset <|-- Book
+
+Asset <|-- IntangibleAsset
+IntangibleAsset <|-- Patent
+
+
+class Computer {
+    -String name;
+    -int price;
+    -String makerName;
+
+    +double getWeight() <<override>>
+    +double setWeight(double weight) <<override>>
+    +String getColor() <<override>>
+    +String setColor(String color) <<override>>
+}
+class Book{
+    -String name;
+    -int price;
+    -String isbn;
+
+    +double getWeight() <<override>>
+    +double setWeight(double weight) <<override>>
+    +String getColor() <<override>>
+    +String setColor(String color) <<override>>
+
+}
+class Patent{
+    -String name;
+    -int price;
+}
+
+
+
+
+@enduml
