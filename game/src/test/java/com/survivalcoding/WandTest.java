@@ -1,3 +1,4 @@
+//캡슐, 컬렉션
 package com.survivalcoding;
 
 import org.junit.jupiter.api.Test;

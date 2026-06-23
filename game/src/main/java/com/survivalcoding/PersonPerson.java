@@ -1,10 +1,11 @@
-package com.survivalcoding;
-
 //컬렉션
 
 //2장 연습문제 1
 //1),3)은 set으로
 //2)은 list로
+//6/15
+
+package com.survivalcoding;
 
 
 import java.util.ArrayList;

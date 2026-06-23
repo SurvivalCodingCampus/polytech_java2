@@ -1,6 +1,6 @@
+//캡슐화
 package com.survivalcoding;
 
-//캡슐화
 public class Wand {
     private String name; // 사람 이름이 아닌 지팡이의 이름
     private double wandPower;

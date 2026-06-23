@@ -1,7 +1,7 @@
 @startuml
-scale 3
+scale 1
 
-class SuperHero exdends Hero{
+class SuperHero extends Hero{
 +void setFlying(bool flying)
 +bool isflying()
 }

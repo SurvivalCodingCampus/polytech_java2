@@ -1,0 +1,62 @@
+@startuml
+
+abstract class Asset {
+    - String name;
+    + Asset(String name)
+}
+
+abstract class IntangibleAsset extends Asset {
+    + IntangibleAsset(String name)
+    }
+
+abstract class TangibleAsset extends Asset implements Thing {
+    - double weight;
+    - String color;
+    - int price;
+
+    + TangibleAsset(String name, int price, String color)
+        super(name);
+        this.price = price;
+        this.color = color;
+    }
+
+class Computer extends TangibleAsset {
+        - String markerName;
+
+        + Computer(String name, int price, String color, String markerName)
+
+
+
+
+        + double weight()<<Override>>
+
+        + void setweight(double weight)<<Override>>
+        }
+
+    class Book extends TangibleAsset {
+        + String isbn;
+
+
+        - Book(String name, int price, String color, String isbn)
+
+        - String getIsbn()
+
+        - void setIsbn(String isbn)
+
+
+        public double weight() <<Override>>
+
+
+        public void setweight(double weight) <<Override>>
+        }
+
+class Patent extends IntangibleAsset {
+    - String PatentNum;
+
+    + Patent(String name, String PatentNum)
+
+    + String getPatentNum()
+
+    + void setPatentNum(String patentNum)
+}
+@enduml

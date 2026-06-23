@@ -1,0 +1,20 @@
+@startuml
+
+class PoisonSlime extends Slime
+{
+    -int poisonCnt
+    +PoisonSlime(String suffix)
+    -void attack(Hero : hero)<<override>>
+}
+class Hero
+{
+    private int hp;
+}
+
+class Slime
+{
+    final String suffix;
+    int hp;
+}
+
+@enduml
