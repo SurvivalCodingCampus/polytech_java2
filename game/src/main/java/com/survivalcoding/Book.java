@@ -17,13 +17,14 @@ public class Book extends TangibleAsset {
         this.isbn = isbn;
     }
 
-    @Override
+
     public double weight() {
         return super.getWeight();
     }
 
     @Override
     public void setweight(double weight) {
+
 
     }
 
