@@ -36,4 +36,37 @@ class GreatWizard extends Wizard {
 Wizard ..> Hero : heal(hero)
 GreatWizard ..> Hero : heal(hero)
 
+class Book extends TangibleAsset{
+- int price
+--
++ Sting name
++ String color
++ String isbn
+}
+
+class Computer extends TangibleAsset{
+- int price
+--
++ String name
++ String color
++ String makeName
+}
+
+abstract class TangibleAsset extends 가Asset{
+- private int price;
+--
++ private String name;
++ private String color;
+--
+- {abstract} void add{}
+}
+
+abstract class 가Asset{
+}
+
+abstract class 나IntangibleAsset extends 가Asset{
+}
+
+class 다Patent extends 나IntangibleAsset{
+}
 @enduml
