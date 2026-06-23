@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-scale 2
+scale 1.5
 
 class Book extends TangibleAsset {
     -String isbn
@@ -11,15 +11,22 @@ class Computer extends TangibleAsset  {
    -String makerName
 }
 
-abstract class TangibleAsset {
-    -String name
-    -int price
+abstract class TangibleAsset extends Asset {
     -String color
 }
+
+abstract class IntangibleAsset extends Asset
+
+class Patent extends IntangibleAsset
 
 interface Thing {
     double getWeight()
     void setWeight(double weight)
+}
+
+abstract class Asset {
+    -String name
+    -int price
 }
 
 @enduml
