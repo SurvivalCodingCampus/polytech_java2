@@ -3,8 +3,19 @@
 
 scale 2
 
-class Book
-class Computer
+class Book extends TangibleAsset {
+    -String isbn
+}
+
+class Computer extends TangibleAsset  {
+   -String makerName
+}
+
+abstract class TangibleAsset {
+    -String name
+    -int price
+    -String color
+}
 
 interface Thing {
     double getWeight()
