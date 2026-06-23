@@ -1,0 +1,39 @@
+@startuml
+
+abstract class Thing{
+    + double weight
+}
+
+abstract class Asset {
+    - String name
+    - int price
+}
+
+abstract class TangibleAsset{
+    - String color
+    - double weight
+}
+abstract class IntangibleAsset{
+
+}
+
+class Book {
+    -String isbn
+}
+class Computer{
+    - String makerName;
+}
+class Patent{
+    - String patentNumber;
+}
+
+Thing <|.. TangibleAsset
+Asset <|-- TangibleAsset
+Asset <|-- IntangibleAsset
+
+TangibleAsset <|-- Book
+TangibleAsset <|-- Computer
+
+IntangibleAsset <|-- Patent
+
+@enduml
