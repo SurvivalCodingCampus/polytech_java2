@@ -1,0 +1,89 @@
+@startuml
+
+abstract class Terran implements Mineral {
+    -String name
+    -int HP
+}
+
+class Marine extends Terran implements Unit, Bionic, Attack {
+    -int damege
+}
+
+class Medic extends Terran implements Unit, Bionic, Cure {
+    -int healing
+}
+
+class Tank extends Terran implements Unit, Mechanic, Attack {
+    -int damege
+}
+
+class Vulture extends Terran implements Unit, Mechanic, Attack {
+    -int damege
+}
+
+class Scv extends Terran implements Unit, Mechanic, Fix, Attack {
+    -int damege
+}
+
+abstract class Zerg implements Bionic, Mineral {
+    -String name
+    -int HP
+}
+
+class Zergling extends Zerg implements Unit, Attack {
+    -int damege
+}
+
+class Hydra extends Zerg implements Unit, Attack {
+    -int damege
+}
+
+abstract class Protoss implements Mineral {
+    -String name
+    -int HP
+}
+
+class Zealot extends Protoss implements Unit, Bionic, Attack {
+    -int damege
+}
+
+class Dragun extends Protoss implements Unit, Mechanic, Attack {
+    -int damege
+}
+
+interface Unit {
+}
+
+interface Structure {
+}
+
+interface Bionic extends Structure {
+}
+
+interface Cure {
+    +int getHeal()
+    +void setHeal(int healing)
+}
+
+interface Fix {
+    +int getFix()
+    +void setFix(int damege)
+}
+
+interface Mechanic {
+    +repairable()
+}
+
+interface Attack {
+}
+
+interface Mineral {
+}
+
+interface NoLiving extends Structure {
+}
+
+interface Moveable {
+}
+
+@enduml
