@@ -1,0 +1,73 @@
+@startuml
+abstract class Asset {
+-String name
+-int hp
+}
+abstract class Zerg extends Asset {
+healing()
+}
+abstract class Protoss extends Asset {
+-sh
+ }
+
+abstract class TUA extends TU {
+attack
+}
+abstract class UTUA extends TU
+abstract class Terran extends Asset {
+
+}
+abstract ZU extends Zerg {
+attack
+}
+abstract ZS extends Zerg
+
+abstract TU extends Terran
+abstract TS extends mec,Terran
+abstract PU extends Protoss{
+-int attack
+}
+abstract PS extends Protoss
+
+class Marine extends bio,TUA{
+}
+class Medic extends bio,UTUA implements heal{
+if(!S)
+heal(bio || (boi && mec)
+}
+class Scv extends bio,mec,TUA implements get, repair{
+repair(mec || (boi && mec)
+}
+class Tank extends mec,TUA{
+}
+class Vulture extends mec,TUA{
+}
+class Ts extends mec,TS{
+}
+class D extends PU {
+}
+class Zealot extends bio,PU {
+}
+class Ps extends PS {
+}
+class Z extends bio,ZU {
+}
+class H extends bio, ZU {
+}
+class Zs extends bio,ZS {
+}
+interface get {
+int money
+}
+interface heal {
+heal(heal)
+}
+interface repair {
+heal(heal)
+}
+abstract class bio {
+}
+abstract class mec {
+}
+
+@enduml
