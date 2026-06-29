@@ -2,7 +2,7 @@ package com.survivalcoding;
 
 public class Quiz {
     public static void main(String[] args) {
-        Hero hero1 = new Hero();
+        Hero hero1 = new Hero("");
 //        hero1.hp = 100;
 //        Hero hero2 = hero1;
 //        hero2.hp = 200;

@@ -5,7 +5,7 @@ package com.survivalcoding;
 public class Main {
     public static void main(String[] args) {
         // 인스턴스 생성
-        Hero hero = new Hero();
+        Hero hero = new Hero("");
 
         hero.setHp(10);
         ;

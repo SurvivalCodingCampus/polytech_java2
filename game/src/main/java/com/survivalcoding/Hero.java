@@ -30,7 +30,7 @@ public class Hero {
     public static void setRandomMoney() {
         money = new Random().nextInt(1000);
 
-        Hero hero = new Hero();
+        Hero hero = new Hero("");
         hero.name = "홍길동";
     }
 

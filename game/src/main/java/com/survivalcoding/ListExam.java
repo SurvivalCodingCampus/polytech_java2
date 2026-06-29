@@ -5,10 +5,10 @@ import java.util.HashSet;
 
 public class ListExam {
     public static void main(String[] args) {
-        Hero hero1 = new Hero();
+        Hero hero1 = new Hero("");
         hero1.setName("이순신");
-        Hero hero2 = new Hero();
-        Hero hero3 = new Hero();
+        Hero hero2 = new Hero("");
+        Hero hero3 = new Hero("");
 
         ArrayList<Hero> heroes = new ArrayList<>();
         heroes.add(hero1);
