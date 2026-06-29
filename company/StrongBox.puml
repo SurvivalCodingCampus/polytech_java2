@@ -6,15 +6,13 @@ enum KeyType {
     DIAL(30000)
     FINGER(1000000)
     ---
+    - int maxDurability
+
     - {Construct} KeyType(int maxDurability)
 
-    - int maxDurability
-    - int durability
-
     + int getMaxDurability()
-    + int getDurability()
 
-    + void setDurability(int durability)
+    + boolean isUnlock(int repeatCount)
 }
 
 class StrongBox<E> {
