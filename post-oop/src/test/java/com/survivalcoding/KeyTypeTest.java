@@ -4,10 +4,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class KeyTypeTest {
-    private final int PADLOCK_NUMBER = 1024;
-    private final int NULL_NUMBER = 512;
+    int limit = KeyType.PADLOCK.getLimit();
 
     @Test
     @DisplayName("제네릭 Type 형태")
@@ -18,7 +18,7 @@ class KeyTypeTest {
         StrongBox<Integer> intbox = new StrongBox<>(KeyType.PADLOCK);
         intbox.put(1004);
 
-        for (int i = 0; i < PADLOCK_NUMBER; i++) {
+        for (int i = 0; i < limit; i++) {
             stringbox.get();
             intbox.get();
         }
@@ -36,13 +36,13 @@ class KeyTypeTest {
         StrongBox<Integer> intbox = new StrongBox<>(KeyType.PADLOCK);
         intbox.put(1004);
 
-        for (int i = 0; i < NULL_NUMBER; i++) {
+        for (int i = 0; i < limit - 2; i++) {
             stringbox.get();
             intbox.get();
         }
 
-        assertEquals(null, stringbox.get());
-        assertEquals(null, intbox.get());
+        assertNull(stringbox.get());
+        assertNull(intbox.get());
     }
 
 }
