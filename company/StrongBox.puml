@@ -1,0 +1,28 @@
+@startuml
+
+enum KeyType {
+    PADLOCK(1024)
+    BUTTON(10000)
+    DIAL(30000)
+    FINGER(1000000)
+    ---
+    - {Construct} KeyType(int maxDurability)
+
+    - int maxDurability
+    - int durability
+
+    + int getMaxDurability()
+    + int getDurability()
+
+    + void setDurability(int durability)
+}
+
+class StrongBox<E> {
+    - E data
+
+    + void put(E data)
+    + E get(KeyType key)
+    + E get()
+}
+
+@enduml
