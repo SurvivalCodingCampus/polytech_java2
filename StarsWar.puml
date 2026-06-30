@@ -1,4 +1,5 @@
 @startuml
+
 interface brood {}
 
 interface Entity {
@@ -22,23 +23,13 @@ interface MoveableEntity extends Entity {
 
 interface Unit extends Entity {}
 
-interface FlyingUnit extends Unit {}
-
 interface AttackableEntity extends Entity {
-    + int getAttackPoint()
-    + boolean isAttack()
-    + double getAttackRange()
-
-    + void setAttackPoint(int attackPoint)
-    + void setIsAttack(boolean isAttack)
-    + void setAttackRange(double attackRange)
-
     + void attack(Entity target)
 }
 
 interface Bionic extends Unit, MoveableEntity {}
 
-interface Mechanic extends Unit, RepairableEntity, MoveableEntity {}
+interface Mechanic extends Unit, MoveableEntity {}
 
 interface MagicEntity extends Entity {
     + int getMP()
@@ -48,10 +39,7 @@ interface MagicEntity extends Entity {
     + void setMaxMP(int maxMP)
 }
 
-interface Structure extends Entity {
-    + String getStructSize()
-    + void setStructureSize(int posX, int posY)
-}
+interface Structure extends Entity {}
 
 interface Worker {
     + void mining()
@@ -59,12 +47,7 @@ interface Worker {
 
 interface RepairableEntity extends Entity {}
 
-abstract class TerranStruct extends Terran implements Structure, RepairableEntity, MoveableEntity {
-    + boolean isLanding
-
-    + boolean isLanding()
-    + void setLanding(boolean isLanding)
-}
+interface HealableEntity extends Entity {}
 
 abstract class Terran implements brood {}
 
@@ -86,57 +69,31 @@ abstract class Zerg implements brood {
     + int getRestoreHP()
 }
 
-interface Burrowable extends Zerg {
-    + void burrow()
+class Marine extends Terran implements Bionic, AttackableEntity, HealableEntity {}
+
+class Medic extends Terran implements Bionic, MagicEntity, HealableEntity {
+    + void heal(HealableEntity target)
 }
 
-class Marine extends Terran implements Bionic, AttackableEntity {
-    - boolean isStimPack
-    - int stimPackCost
+class Vulture extends Terran implements Mechanic, AttackableEntity, RepairableEntity {}
 
-    + boolean isStimPack()
-    + int getStimPackCost()
+class Tank extends Terran implements Mechanic, AttackableEntity, RepairableEntity {}
 
-    + void setIsStimPack(boolean isStimPack)
-    + void setStimPackCost(int stimPackCost)
-}
-
-class Medic extends Terran implements Bionic, MagicEntity {
-    - int healCostMP
-    - int restorationCostMP
-    - int opticalFlareCostMP
-
-    + int getHealCostMP()
-    + int getRestorationCostMP()
-    + int getOpticalFlareCostMP()
-
-    + void setHealCostMP(int healCostMP)
-    + void setRestorationCostMP(int restorationCostMP)
-    + void setOpticalFlareCostMP(int opticalFlareCostMP)
-}
-
-class Vulture extends Terran implements Mechanic, AttackableEntity {
-    + void landMine()
-}
-
-class Tank extends Terran implements Mechanic, AttackableEntity {
-    + void modeChange()
-}
-
-class Scv extends Terran implements Mechanic, Bionic, Worker, AttackableEntity {
+class Scv extends Terran implements Mechanic, Bionic, Worker, AttackableEntity, RepairableEntity {
     + void repair(Repairable target)
 }
 
-class CommandCenter implements TerranStruct {}
-
-class Zergling extends Zerg implements Bionic, Unit, AttackableEntity, Burrowable {}
-class Hydra extends Zerg implements Bionic, Unit, AttackableEntity,Burrowable {}
-
-class Hive extends Zerg implements Structure {}
+class Zergling extends Zerg implements Bionic, Unit, AttackableEntity {}
+class Hydra extends Zerg implements Bionic, Unit, AttackableEntity {}
 
 class Zealot extends Protoss implements Bionic, Unit, AttackableEntity {}
 class Dragun extends Protoss implements Mechanic, Unit, AttackableEntity {}
 
-class Nexus extends Protoss implements Structure {}
+class UnitGroup {
+    - Unit[] Units
+
+    + void move()
+    + void attack(Entity target)
+}
 
 @enduml
