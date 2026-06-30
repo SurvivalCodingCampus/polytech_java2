@@ -3,8 +3,6 @@ scale 1
 
 abstract class Asset{
     -String name
-
-    +TotalAsset(String name)
 }
 
 abstract class TangiblAsset extends Asset implements Thing{

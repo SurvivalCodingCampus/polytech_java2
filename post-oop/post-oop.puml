@@ -1,0 +1,25 @@
+@startuml
+
+class StrongBox<E> {
+    -E data
+    -final KeyType keyType
+    -int count = 0
+
+    +StrongBox(KeyType keyType)
+    +void put(E data)
+    +E get()
+}
+
+enum KeyType {
+    PADLOCK(1024),
+    BUTTON(10000),
+    DIAL(30000),
+    FINGER(1000000)
+---
+    -final int limit
+---
+    +KeyType(int limit)
+    +int getLimit()
+}
+
+@enduml

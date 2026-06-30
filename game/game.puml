@@ -3,10 +3,10 @@ scale 1
 
 class GreatWizard extends Wizard {
     -int gmp = 150
-    +GreatWizard(String name, int hp, int mp)
+    ~GreatWizard(String name, int hp, int mp)
 
-    +<Override>void heal(Hero hero)
-    +void superHeal(Hero hero)
+    ~<Override>void heal(Hero hero)
+    ~void superHeal(Hero hero)
 }
 
 class Wizard {
@@ -42,8 +42,8 @@ class Hero {
     -int hp
     -int maxHp = 300
 
-    +Hero(String name, int hp)
-    +void attack()
+    ~Hero(String name, int hp)
+    ~void attack()
 }
 
 
