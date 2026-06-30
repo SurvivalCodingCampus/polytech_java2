@@ -1,0 +1,58 @@
+@startuml
+interface Unit{
++ getHP()
++ setHP()
++ getName()
++ setName()
++ attck()
+}
+interface Srtucture{
++ getHP()
++ setHP()
++ getName()
++ setName()
++ getUnit()
++ setUnit()
+}
+
+class Terran{
++ steamPack()
+}
+class Protoss{
++ int shield
++ int shieldMax
+--
++ setShield()
++ getShield()
+
+}
+class Zerg{
++ reGenerate()
+}
+
+interface Bionic{
++ heal()
+}
+
+interface Mechanic{
++ repair()
++ mining()
+}
+
+class Marine extends Terran implements Unit, Bionic {
+@override
+}
+class Medic extends Terran implements Unit, Bionic {
+}
+
+class Vulture extends Terran implements Unit, Mechanic {}
+class Tank extends Terran implements Unit, Mechanic {}
+class Scv extends Terran implements Unit, Mechanic, Bionic {
+}
+
+class Zergling extends Zerg implements Unit, Bionic{}
+class Hydra extends Zerg implements Unit, Bionic{}
+
+class Zealot extends Protoss implements Unit, Bionic{}
+class Dragun extends Protoss implements Unit, Mechanic{}
+@enduml

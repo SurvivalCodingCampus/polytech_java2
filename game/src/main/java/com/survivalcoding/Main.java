@@ -6,12 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         //용사 생성 (ram 메모리에 용사 데이터 올리기)
-//        Hero hero = new Hero();
-//        Wizard wizard = new GreatWizard(100);
-//
-//
-//        for (int i = 0; i < 20; i++) {
-//            wizard.heal(hero);
-//        }
+
+        
     }
 }

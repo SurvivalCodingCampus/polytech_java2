@@ -69,4 +69,22 @@ abstract class 나IntangibleAsset extends 가Asset{
 
 class 다Patent extends 나IntangibleAsset{
 }
+
+
+interface Terran{}
+interface Protos{}
+interface Zerg{}
+
+interface Human{}
+class Bionic{}
+class Mechanic{}
+
+class Marin{}
+class Medic{}
+
+class Vulture{}
+class Scv extends Mechanic implements Terran{
+void mining{}
+void repair{}
+}
 @enduml
