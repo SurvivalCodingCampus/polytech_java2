@@ -5,9 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BookTest {
     private Book book;
@@ -70,5 +68,18 @@ public class BookTest {
         assertEquals("빠른책", BookList.get(0).GetTitle(), "가장 과거에 출간된 책이 맨 앞으로 와야 한다.");
         assertEquals("중간책", BookList.get(1).GetTitle(), "그다음 날짜의 책이 두 번째여야 한다.");
         assertEquals("느린책", BookList.get(2).GetTitle(), "가장 최근(미래)에 출간된 책이 마지막이어야 한다.");
+    }
+
+    @Test
+    @DisplayName("clone()을 호출하면 원본과 데이터는 같지만 주소가 다른 깊은 복사 객체가 생성된다.")
+    void Book_Clone_Test() {
+        Book CloneBook = book.clone();
+        assertEquals(book, CloneBook, "복사된 객체는 원본과 데이터 내용이 같아야 합니다.");
+        assertNotSame(book, CloneBook, "내용은 같아도 메모리상의 주소는 서로 달라야 합니다.");
+
+        CloneBook.SetTitle("췍이아닌 책");
+
+        assertEquals("췍", book.GetTitle(), "사본을 수정해도 원본의 데이터는 보호되어야 합니다.");
+        assertEquals("췍이아닌 책", CloneBook.GetTitle(), "사본의 데이터만 독립적으로 변경되어야 합니다.");
     }
 }
