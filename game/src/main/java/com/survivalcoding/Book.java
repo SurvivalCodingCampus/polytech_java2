@@ -1,8 +1,8 @@
 package com.survivalcoding;
 
-import java.util.*;
+import java.util.Date;
 
-public class Book extends TangibleAsset {
+public class Book /*extends TangibleAsset*/ {
 //    다음 동작을 할 수 있도록 Book 클래스를 수정하시오.
 //
 //    제목과 출간일(예: 2024-01–01)이 같으면 같은 책으로 판단한다. 또한 List, Map, Set 등의 컬렉션에 넣어도 동일 객체로 판단한다.
@@ -11,13 +11,14 @@ public class Book extends TangibleAsset {
 
     private String isbn;
     private String title;
-    private Date publishDate;
+    private long publishDate = Date.parse("2026-06-30");
+    ;
     private String comment;
-    Set<Book> book = new HashSet<>();
+
 
     private int bookCount = 0;
 
-    public void book(String title, Date publishDate, String comment) {
+    public Book(String title, long publishDate, String comment) {
 
         this.title = title;
         this.publishDate = publishDate;
@@ -26,27 +27,19 @@ public class Book extends TangibleAsset {
 
     }
 
-    @Override
-    public boolean equals(Objects o) {
-        return false;
+    public String getTitle() {
+        return this.title;
     }
 
-    @Override
-    public int hashCode(Objects o) {
-        int result = Object.hashCode(Book);
-        result = 31 * result;
-
-        return result;
+    public long getPublishDate() {
+        return this.publishDate;
     }
 
-    public void bookSort() {
-
-
-        Collections.sort();
+    public String getComment() {
+        return this.comment;
     }
-    //getter
 
-    //setter
+
 //    public Book(String name, int price, String color, double weight, String assetType, String isbn) {
 //        setName(name);
 //        setPrice(price);

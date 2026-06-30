@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 class BookTest {
@@ -94,13 +95,27 @@ class BookTest {
 //    }
     @Test
     void given() {
-        Book book = new Book();
-        List<Integer> bookSet = new ArrayList<Integer>();
-        bookSet.add(1);
-        bookSet.add(1);
-        bookSet.add(1);
 
-        Collections.sort(bookSet);
+        Book book = new Book("title", 2023 - 1 - 1, "comment");
+
+        List<Book> books = new ArrayList<>();
+        books.add(new Book("dff", 2026 - 1 - 30, "comments"));
+        books.add(new Book("dff", 2026 - 1 - 30, "comments"));
+        books.add(new Book("acdc", 2026 - 1 - 12, "comments"));
+        // 오름차순
+//        Collections.sort(heroes);
+
+        // 내림차순, 익명클래스
+        //Collections.sort(books);
+
+        Collections.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                return o1.getTitle().compareTo(o2.getTitle()) * -1;
+            }
+        });
+        Collections.sort(books, (o1, o2) -> o1.getTitle().compareTo(o2.getTitle()));
+
     }
+
 }
- 
