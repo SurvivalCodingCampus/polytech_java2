@@ -1,5 +1,7 @@
 package com.survivalcoding;
 
+import java.util.Objects;
+
 public class Book extends TangibleAsset {
     private String isbn;
 
@@ -14,5 +16,24 @@ public class Book extends TangibleAsset {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (!(o instanceof Book book)) return false;
+
+        return Objects.equals(isbn, book.isbn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(isbn);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "isbn='" + isbn + '\'' +
+                '}';
     }
 }
