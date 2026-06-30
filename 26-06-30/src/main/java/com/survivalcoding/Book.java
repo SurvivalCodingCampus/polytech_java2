@@ -3,7 +3,7 @@ package com.survivalcoding;
 import java.util.Date;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private String title;
     private Date publishDate;
     private String comment;
@@ -14,13 +14,24 @@ public class Book {
         this.comment = comment;
     }
 
+    public String GetTitle() {
+        return this.title;
+    }
+
+    public void SetTitle(String newTitle) {
+        this.title = newTitle;
+    }
+
+    public void SetDate(Date newDate) {
+        this.publishDate = newDate;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof Book book)) return false;
 
         return Objects.equals(this.title, book.title) && Objects.equals(this.publishDate, book.publishDate);
-
     }
 
     @Override
@@ -28,5 +39,10 @@ public class Book {
         int result = Objects.hashCode(title);
         result = 31 * result + Objects.hashCode(publishDate);
         return result;
+    }
+
+    @Override
+    public int compareTo(Book obj) {
+        return this.publishDate.compareTo(obj.publishDate);
     }
 }
