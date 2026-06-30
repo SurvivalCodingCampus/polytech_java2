@@ -1,0 +1,80 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+size 0.5
+
+
+class Medic{
+- int healing
+}
+class Marine{
+-int damege
+}
+class Trank{
+-int damage
+}
+class Vulture{
+-int damage
+}
+class Scv{
+-int damage
+}
+class Zergling{
+-int damage
+}
+class Hydra{
+- int damege
+}
+class Dragun{
+-int damege
+}
+class Zealot{
+- int damege
+}
+
+
+interface cure{
++ int getHeal()
++ void setHeal(int healing)
+}
+
+interface unit{}
+
+interface Mechanic{
++repairable()
+}
+
+interface Fix{
++int getFix()
++void setFix(int damege)
+}
+
+interface Attack{}
+
+abstract Terran{
+-String name
+-int HP
+}
+
+abstract Zerg{
+-String name
+-int HP
+}
+
+abstract Protoss{
+-String name
+-int HP
+}
+
+interface Bionic{}
+
+interface Mineral{}
+
+interface NoLiving{}
+
+interface Structure{}
+
+interface Moveable{}
+
+
+
+@enduml

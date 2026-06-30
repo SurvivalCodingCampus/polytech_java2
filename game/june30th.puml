@@ -1,0 +1,19 @@
+@startuml
+
+
++ class Book2 {
+    - String title;
+    - Data publishDate;
+    - String comment;
+
+    + String getTitle()
+    + void setTitle(String title)
+    + Data getPublishDate()
+    + void setPublishDate(Data publishDate)
+    + String getComment()
+    + void setComment(String comment)
+
+
+}
+
+@enduml
