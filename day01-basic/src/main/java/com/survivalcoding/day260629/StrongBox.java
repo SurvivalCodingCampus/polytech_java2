@@ -1,7 +1,7 @@
 package com.survivalcoding.day260629;
 
 
-public class StrongBox <T>{
+public class StrongBox<T> {
 
     private T item;
     private KeyType keyType;
