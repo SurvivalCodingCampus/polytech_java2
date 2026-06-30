@@ -59,4 +59,12 @@ public class Hero {
     public void run() {
         System.out.println("달렸다");
     }
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                '}';
+    }
 }
