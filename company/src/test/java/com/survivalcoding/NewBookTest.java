@@ -61,7 +61,7 @@ class NewBookTest {
         Collections.sort(books);
 
         // then
-        assertEquals(List.of(book3, book2, book4, book1, book5), books, "정렬이 예상과 맞지 않습니다.");
+        assertEquals(List.of(book3, book1, book2, book4, book5), books, "정렬이 예상과 맞지 않습니다.");
 
     }
 

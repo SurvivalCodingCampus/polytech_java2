@@ -30,10 +30,20 @@ public class NewBook implements Comparable<NewBook>, Cloneable {
 
     @Override
     public int compareTo(NewBook o) {
-        if (this.publishDate.after(o.getPublishDate())) {
-            return -1;
-        } else if (this.publishDate.before(o.getPublishDate())) {
-            return 1;
+//        연/월/일 뿐만이 아니라 시간을 포함해서 정렬하기에 개선이 필요함
+//        if (this.publishDate.after(o.getPublishDate())) {
+//            return -1;
+//        } else if (this.publishDate.before(o.getPublishDate())) {
+//            return 1;
+//        }
+//        return 0;
+
+        if (this.getPublishDate().getYear() != o.getPublishDate().getYear()) {
+            return o.getPublishDate().getYear() - this.getPublishDate().getYear();
+        } else if (o.getPublishDate().getMonth() != this.getPublishDate().getMonth()) {
+            return o.getPublishDate().getMonth() - this.getPublishDate().getMonth();
+        } else if (o.getPublishDate().getDate() != this.getPublishDate().getDate()) {
+            return o.getPublishDate().getDate() - this.getPublishDate().getDate();
         }
         return 0;
     }
