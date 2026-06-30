@@ -23,6 +23,6 @@ public class Computer extends TangibleAsset {
 
     @Override
     public void setweight(double weight) {
-
+        super.setWeight(weight);
     }
 }

@@ -1,9 +1,10 @@
 @startuml
-
+scale 1
 abstract class Asset {
     - String name;
     + Asset(String name)
 }
+
 
 abstract class IntangibleAsset extends Asset {
     + IntangibleAsset(String name)
@@ -16,8 +17,6 @@ abstract class TangibleAsset extends Asset implements Thing {
 
     + TangibleAsset(String name, int price, String color)
         super(name);
-        this.price = price;
-        this.color = color;
     }
 
 class Computer extends TangibleAsset {
@@ -33,25 +32,25 @@ class Computer extends TangibleAsset {
         + void setweight(double weight)<<Override>>
         }
 
-    class Book extends TangibleAsset {
-        + String isbn;
+class Book extends TangibleAsset {
+    - String isbn;
 
 
-        - Book(String name, int price, String color, String isbn)
+    + Book(String name, int price, String color, String isbn)
 
-        - String getIsbn()
+    + String getIsbn()
 
-        - void setIsbn(String isbn)
-
-
-        public double weight() <<Override>>
+    + void setIsbn(String isbn)
 
 
-        public void setweight(double weight) <<Override>>
-        }
+    + double weight() <<Override>>
+
+
+    + void setweight(double weight) <<Override>>
+    }
 
 class Patent extends IntangibleAsset {
-    - String PatentNum;
+    - String patentNum;
 
     + Patent(String name, String PatentNum)
 

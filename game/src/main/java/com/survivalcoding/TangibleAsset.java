@@ -27,11 +27,24 @@ public abstract class TangibleAsset extends Asset implements Thing {
         this.price = price;
     }
 
+    //public double getWeight() {
+    @Override
+    public double weight() {
+        return weight;
+        //return this.weight;
+    }
+
+    //public void setWeight(double weight) {
+    @Override
+    public void setweight(double weight) {
+        this.weight = weight;
+    }
+
     public double getWeight() {
-        return this.weight;
+        return weight();
     }
 
     public void setWeight(double weight) {
-        this.weight = weight;
+        setweight(weight);
     }
 }

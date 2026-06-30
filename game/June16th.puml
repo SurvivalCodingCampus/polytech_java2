@@ -1,10 +1,11 @@
 @startuml
+scale 1
 
 class PoisonSlime extends Slime
 {
     -int poisonCnt
     +PoisonSlime(String suffix)
-    -void attack(Hero : hero)<<override>>
+    +void attack(Hero : hero)<<override>>
 }
 class Hero
 {
