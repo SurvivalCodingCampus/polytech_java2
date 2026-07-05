@@ -21,13 +21,16 @@ public class Book extends TangibleAsset {
     @Override
     public final boolean equals(Object o) {
         if (!(o instanceof Book book)) return false;
+        if (!super.equals(o)) return false;
 
         return Objects.equals(isbn, book.isbn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(isbn);
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(isbn);
+        return result;
     }
 
     @Override

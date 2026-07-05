@@ -6,6 +6,6 @@ public class MyComparator implements Comparator<Hero> {
 
     @Override
     public int compare(Hero o1, Hero o2) {
-        return o1.compareTo(o2) * -1;
+        return 0;
     }
 }

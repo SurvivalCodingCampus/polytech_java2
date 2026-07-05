@@ -28,7 +28,7 @@ public abstract class Asset {
     }
 
     @Override
-    public final boolean equals(Object o) {
+    public boolean equals(Object o) {
         if (!(o instanceof Asset asset)) return false;
 
         return price == asset.price && Objects.equals(name, asset.name);
