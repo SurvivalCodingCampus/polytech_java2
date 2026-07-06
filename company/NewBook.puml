@@ -1,0 +1,27 @@
+@startuml
+
+
+class NewBook implements Comparable, Cloneable{
+    - String title
+    - Date publishDate
+    - String comment
+--
+    + {Constructor} NewBook(String title, Date publishDate, String comment)
+    + {Constructor} NewBook(String title, Date publishDate, String)
+
+    + {override} int compareTo(NewBook o)
+    + {override} boolean equals(Object o)
+    + {override} int hashCode()
+    + {override} String toString()
+    + {override} NewBook clone()
+--
+    + String getTitle()
+    + Date getPublishDate()
+    + String getComment()
+
+    + void setTitle(String title)
+    + void setPublishDate(Date publishDate)
+    + void setComment(String comment)
+}
+
+@enduml
