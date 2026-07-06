@@ -8,6 +8,7 @@ public class Book2 {
     private String title;
     private Data publishDate;
     private String comment;
+    private Book2 Data;
 
     Book2(String title, Data publishDate, String comment) {
         this.title = title;
@@ -51,10 +52,13 @@ public class Book2 {
 
         if (!(obj instanceof Book2)) return false;
         Book2 bb = (Book2) obj;
+        return title.equals(bb.title);
+        /*
+        Book2 bb = (Book2) obj;
         String Data;
-        return title == bb.title && Data(equals(bb.Data));
+        return title == bb.title && Book2(equals(bb.Data));
         title.equals(Data);
-
+        */
         //boolean Object;
     }
 
