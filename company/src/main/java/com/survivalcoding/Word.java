@@ -53,6 +53,11 @@ public class Word implements Cloneable {
     }
 
     @Override
+    public int hashCode() {
+        return 31 * letters.hashCode();
+    }
+
+    @Override
     public Word clone() {
         return new Word(this.letters);
     }
