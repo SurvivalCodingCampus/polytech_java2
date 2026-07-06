@@ -1,0 +1,16 @@
+@startuml
+package com.survivalcoding {
+
+    class Main {
+        + {static} main(args: String[]) : void
+    }
+
+    class FileUtil {
+        + getPath(path: String, fileName: String) : String
+    }
+
+}
+
+Main ..> FileUtil : uses >
+
+@enduml
