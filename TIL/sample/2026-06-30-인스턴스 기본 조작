@@ -1,0 +1,27 @@
+# 2026-06-30 인스턴스 기본 조작
+
+## 오늘 배운 내용
+- Object 클래스의 기본 기능
+- 1. Object 타입 변수에는 모든 인스턴스를 대입 가능 - Object: 최상위 부모 클래스 so 다형서의 원리 적용 가능
+- 예시)
+- Object obj = new String("안녕하세요"); // 업캐스팅 (모든 객체 대입 가능)
+- String str = (String) obj;         // 다운캐스팅 (원래 타입으로 변환하여 사용)
+
+- 2. Object 클래스의 메서드(e.g. toString(), remove(), equals(), hashCode(), sort())는 모든 클래스에 있음
+- toString() 사용시 오버라드(재정의)하여 객체 내용을 쉽게 보여줄 수 있게 수정 가능
+- remove() 사용시 list, set에서 데이터 저장방식(주소값으로 저장?)과 중복허용 때문에 중복된 변수를 지울 때 결과가 다름. -> 데이터 저장 타입 선택의 중요
+-
+- equals() 사용시 오버라이드하여 동등성 규칙 정의 가능. List에서. 순차 검색으로 느림
+- hashCode() 사용시 재정의하여 동등성 규칙 정의 가능. Set,Map 내부에서. equals()보다 비용이 쌈
+- hashCode는 객체 데이터 가지고 규칙에 따라 숫자(코드)를 만든 거임. So 모든 객체 해시값 가짐. 객체 = -> 해시값 = (참). 해시값 = -> 객체 = (거짓).
+- Collections.sort() 사용시 컬렉션(list, interface..) 내부 정렬. 키워드: Comparable 인터페이스 구현시 사용가능..public class 이름 implements Comparable<이름>
+- Collections.sort() 대소비교(-1, 0, 1)로 정렬. CompareTo() 규칙도 동일. Comparator 인터페이스
+
+-
+
+- 얇은 복사: 주소값 복사. 독립 개체 아님. 별명 생김
+- 깊은 복사: 값자체 복사. 독립 개체 생성
+
+
+
+- 정의, 조건 및 제약, 목적 --사용시 행동양식으로 참고할 수 있게 정리..
