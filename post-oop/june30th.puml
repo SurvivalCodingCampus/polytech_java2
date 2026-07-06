@@ -1,0 +1,22 @@
+@startuml
+enum KeyType {
+    PADLOCK,
+    BUTTON,
+    DIAL,
+    FINGER
+}
+class StrongBox<K> {
+
+    - K data
+    - int cnt
+    - KeyType keyType
+
+    + StrongBox(KeyType keyType)
+    + void put(K data)
+    + K get()
+}
+
+StrongBox -- KeyType
+@enduml
+
+
