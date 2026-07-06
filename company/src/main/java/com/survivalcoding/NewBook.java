@@ -90,7 +90,7 @@ public class NewBook implements Comparable<NewBook>, Cloneable {
     }
 
     public void setTitle(String title) {
-        if (title.isEmpty()) {
+        if (title == null || title.isEmpty()) {
             throw new IllegalArgumentException("책 제목은 비어있을 수 없습니다.");
         }
         this.title = title;
