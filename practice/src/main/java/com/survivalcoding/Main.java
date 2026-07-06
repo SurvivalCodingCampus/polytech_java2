@@ -14,5 +14,12 @@ public class Main {
         String str = sb.toString();
 
         String[] a = str.split(",");
+
+        FileUtil fileUtil = new FileUtil();
+
+        String result = fileUtil.getPath("C:\\dev", "abc.txt");
+
+        System.out.println(result);
     }
 }
+
