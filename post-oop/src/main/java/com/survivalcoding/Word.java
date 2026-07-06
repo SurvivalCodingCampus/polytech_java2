@@ -22,10 +22,12 @@ public class Word {
             return true;
         } else if (letters.substring(i, i + 1).equals("i") || letters.substring(i, i + 1).equals("I")) {
             return true;
+        } else if (letters.substring(i, i + 1).equals("o") || letters.substring(i, i + 1).equals("O")) {
+            return true;
         }
-        return (letters.substring(i, i + 1).equals("o")) || (letters.substring(i, i + 1).equals("O"));
+        return (letters.substring(i, i + 1).equals("u")) || (letters.substring(i, i + 1).equals("U"));
     }
-    
+
     public boolean isConsonant(int i) {
         return !this.isVowel(i);
     }
