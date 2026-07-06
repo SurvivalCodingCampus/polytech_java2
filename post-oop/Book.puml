@@ -1,0 +1,21 @@
+@startuml
+
+class Book implements Comparable, Cloneable {
+    -String title
+    -Date publishDate
+    -String comment
+    -int year
+    -int month
+    -int day
+
+    +Book(String title, String publishDateStr, String comment)
+    +Book(Book other)
+
+    +<<Override>> boolean equals(Object o)
+    +<<Override>> int hashCode()
+    +<<Override>> String toString()
+    +<<Override>> int compareTo(Book o)
+    +<<Override>> Book clone()
+}
+
+@enduml
