@@ -1,0 +1,34 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface Comparable<T> {
+    + compareTo(other: T): int
+}
+
+interface Cloneable {
+}
+
+class Book {
+    - title: String
+    - publishDate: Date
+    - comment: String
+
+    + Book()
+    + Book(title: String, publishDate: Date, comment: String)
+    + getTitle(): String
+    + setTitle(title: String): void
+    + getPublishDate(): Date
+    + setPublishDate(publishDate: Date): void
+    + getComment(): String
+    + setComment(comment: String): void
+    + toString(): String
+    + equals(o: Object): boolean
+    + hashCode(): int
+    + compareTo(other: Book): int
+    + clone(): Book
+}
+
+Comparable <|.. Book : <<realizes>>
+Cloneable <|.. Book : <<realizes>>
+
+@enduml
