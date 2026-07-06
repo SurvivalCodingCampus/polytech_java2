@@ -1,5 +1,7 @@
 package com.survivalcoding;
 
+import java.util.Objects;
+
 public abstract class TangibleAsset extends Asset implements Thing {
     private int price;
     private String name;
@@ -39,5 +41,9 @@ public abstract class TangibleAsset extends Asset implements Thing {
     public int getPrice() {
         return price;
     }
+
+    public abstract boolean equals(Objects o);
+
+    public abstract int hashCode(Objects o);
 }
 

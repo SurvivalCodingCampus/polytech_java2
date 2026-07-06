@@ -26,10 +26,11 @@ public class StrongBox<T> {
 
     private T data;
     private KeyType keyType = KeyType.PADLOCK;
-    private int usageNumber;
+    private int getMaxCount;
 
     public StrongBox(KeyType keyType) {
         this.keyType = keyType;
+        getMaxCount = keyType.getLimit();
     }
 
     public void put(T data) {
@@ -37,9 +38,12 @@ public class StrongBox<T> {
 
     }
 
+    public int MaxCount() {
+        return getMaxCount;
+    }
 
     public T get() {
-        
+
         return data;
 
     }

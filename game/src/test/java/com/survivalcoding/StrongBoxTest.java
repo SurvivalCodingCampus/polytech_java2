@@ -8,17 +8,20 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class StrongBoxTest {
     @Test
-    void StrongBoxTest() {
-        //given
+    void get() {
+
+        KeyType keyType;
+        final String extended = "!!!";
+
 
         StrongBox<String> box = new StrongBox<>(KeyType.PADLOCK);
-
-
-        box.put("보물");
-
-        for (int i = 0; i < 1023; i++) {
+        for (int i = 0; i < box.MaxCount() - 1; i++) {
             assertNull(box.get());
         }
+//        @Contract(pure = true)
+//        for (int i = 0; i < KeyType.getLimit() - 1; i++) {
+//            assertNull(box.get());
+//        }
 
         assertEquals("보물", box.get());
 
