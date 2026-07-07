@@ -14,7 +14,7 @@ public class Word {
     }
     public boolean isConsonant(int i){
         String c= letters.substring(i, i+1).toLowerCase(); //i는 어디서 부터 i+1어디까지라는 의미 📌
-        return "bcdefghjklmnpqrstvwxyz".contains(c);
+        return "bcdfghjklmnpqrstvwxyz".contains(c); //에서 돌기때문에 if 문 안써도 된다.
     }
 }
 
