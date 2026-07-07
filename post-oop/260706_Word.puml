@@ -1,0 +1,11 @@
+@startuml
+
+class Word {
+    - String letters;
+
+    + Word(String letters)
+    + boolean isVowel(int i)
+    + boolean isConsonant(int i)
+}
+
+@enduml
