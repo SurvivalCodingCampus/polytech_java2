@@ -3,8 +3,7 @@ package com.survivalcoding;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 class WordTest {
     final String testString = "testString";
@@ -56,5 +55,18 @@ class WordTest {
             chk = !(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') && c != ' ' && c != '\t';
             assertSame(chk, chkWord.isConsonant(i), i + 1 + "번째 글자에서 판정 오류 발생");
         }
+    }
+
+    @Test
+    @DisplayName("clone 테스트")
+    void cloneTest() {
+        // Given
+        Word testWord = new Word(testString);
+
+        // when
+        Word clone = testWord.clone();
+
+        // when - then
+        assertNotSame(testWord, clone);
     }
 }

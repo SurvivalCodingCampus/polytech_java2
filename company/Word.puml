@@ -1,0 +1,16 @@
+@startuml
+
+class Word implements Cloneable {
+    + {Constructor} Word(String letters)
+
+    + String getLetters()
+    + void setLetters(String letters)
+
+    + boolean isVowel(int i)
+    + boolean isConsonant(int i)
+
+    + Word clone()
+    + String toString()
+}
+
+@enduml
